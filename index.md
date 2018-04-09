@@ -1,6 +1,6 @@
 <center><img src="img/geotaster_git_banner.png" alt="banner"/></center>
 
-# Geo-Taster Workshop - Introduction to Version Control and Git
+# Introduction to Version Control and Git
 
 ## Aims
 
