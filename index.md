@@ -24,6 +24,9 @@
 
 ### <a href="#section10"> 10. Understand how to use Git for academic research</a>
 
+This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised.
+
+
 
 <a name="section1"></a>
 
