@@ -1,4 +1,4 @@
-<center><img src="{{ site.baseurl }}/BANNER_IMAGE.png" alt="Img"></center>
+<center><img src="img/geotaster_git_banner.png" alt="banner"/></center>
 
 # Geo-Taster Workshop - Introduction to Version Control and Git
 
