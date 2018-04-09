@@ -68,15 +68,15 @@ Head to [Github](https://github.com) to get started. You should see a registrati
 
 Once you are registered, head back to [Github](https://github.com) and sign in. Then go to your profile by clicking the dropdown on the right side of the page and clicking "Your profile", as in the image below.
 
-![](img/.jpg)
+![](img/new_repo.png)
 
 You should then be able to click "Repositories" and the big green "New" button to create a repository to which we will back up the local Git repository we created earlier. Give the repository the same name as the local repository, which in this case is `geotaster_test` and click "Create repository".  
 
-![]({img/.jpg)
+![]({img/name_repo.png)
 
 Now you will be able to find the link to the newly created respository, either as an SSH link or an HTTPS link. HTTPS links are more likely to work across all platforms, so copy that link.
 
-![]({img/.jpg)
+![]({img/https_link.png)
 
 Then on the command line, navigate to your `geotaster_test` directory and type the following, replacing `<HTTPS_LINK>` with the link you just copied:
 
