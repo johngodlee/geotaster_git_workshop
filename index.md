@@ -171,9 +171,55 @@ Now for the first Git commit. Initiate the directory as a Git repository (repo) 
 git init
 ```
 
-If you `ls -A` to show the files, you will now see a subdirectory called `.git`. This subdirectory contains all the information
+If you `ls -A` to show the files, you will now see a subdirectory called `.git`. This subdirectory contains all the information used by Git to keep track of file changes in this repo. If you delete `.git`, the directory will cease to be a Git repo.
 
+Git keeps track of your files through versions of the repository called "commits". A commit is a snapshot of the repository at a particular point in time.
 
+In order to see how commits work, first create a file called `notes.txt`:
+
+```shell 
+touch notes.txt
+```
+
+Now if you type:
+
+```shell
+git status
+```
+
+you will see that Git has noticed that you have added a file, but you have not told Git to track the file. This means that currently, any commits you make will not include `notes.txt`.
+
+To add the file so Git tracks it, type:
+
+```shell
+git add notes.txt
+```
+
+Now if you type `git status` again, you will see that `notes.txt` is now recognised as a new file, a change to the repo that is ready to be included in the next commit.
+
+To create a commit and take a snapshot of the repo, type:
+
+```shell
+git commit
+```
+
+This will trigger a text editor to open where you can write a short message describing what has changed in this commit. In this instance I might write something like `Created notes.txt, empty`. Then save and exit the editor and the commit will be processed. This commit is now a snapshot that you can return to at any time in the future.
+
+Add a few more commits by changing the contents of `notes.txt` and adding creating some files called `example.txt` and `example.sh`. Fill example.txt with whatever you like, and fill `example.sh` with the following:
+
+```shell
+#!/bin/bash
+
+echo "hello world"
+```
+
+To view the commits you have made, type the following to get a short description of each commit, with the commit messages that you entered earlier:
+
+```shell 
+git log
+```
+
+Before we get onto more complicated git commands, we need to setup a remote server which will be used to sync versions of the repo, creating a kind of backup.
 
 
 <a name="section4"></a>
@@ -276,9 +322,40 @@ git diff 1c6787895640eedfda3c1399f3e2171e0761e91 HEAD
 
 `HEAD` refers to the most recent commit. 
 
+
 <a name="section6"></a>
 
 ## 6. Learn to use multiple branches, merging, pull requests, forks
+
+At the moment, if you were to visualise your git commit history in the `gt_git` repository, it would like like this, with a simple linear structure, each:
+
+![](img/commits_simple.png)
+
+But Git can actually handle multiple parallel sequences of commits, known as branches:
+
+![](img/commits_complex.png)
+
+Here we have three branches. The `master` branch is equivalent to the single branch we were working on earlier, while the `documentation` and `shell_test` branches are extra branches with different versions of the repo on them.
+
+The branch system works really well if you have multiple people working on different facets of the same project in the same Git repo. Working on a separate branch means that one person can make changes that could potentially break whatever another person is working on, without actually impacting the first persons work. The branches can then be merged back together later when work has finished on those aspects of the project.
+
+To create a new branch type:
+
+```shell
+git checkout -b shell_test
+```
+
+This will create a new branch called `shell_test` and switch you to that branch.
+
+Now, the first thing you should do with your new branch is sync it to the remote Github version of the repo. To do this, type:
+
+```shell
+git push --set-upstream remote origin shell_test
+```
+
+This will create a new remote branch that the local `shell_test` branch will sync with when you run `git push`.
+
+Make some changes to 
 
 
 <a name="section7"></a>
