@@ -5,7 +5,7 @@
 $table-text-align: left !default;
 
 // Import the css from the Jekyll gem
-@import "minima";
+@import "{{ site.theme }}";
 
 pre, code {
         background-color: #e0e0e0;  // Colour inside code block
