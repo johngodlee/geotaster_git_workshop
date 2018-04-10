@@ -69,19 +69,77 @@ You can either follow along through this workshop on a School of GeoSciences Win
 
 ### Setup Git with personal Windows
 
+Head to [https://git-scm.com/download/win](https://git-scm.com/download/win). Git should start downloading automatically, otherwise, choose the version which is appropriate for your system. Most systems will need the "64-bit Git for Windows Setup".
+
+Run the installer that just downloaded. The following options are what I would recommend, but feel free to change them to your liking:
+
+1. For "Select Components", check:
+	* "Git Bash Here"
+	* "Git GUI Here"
+	* "Git LFS (Large File Support)"
+	* "Associate .git* ..."
+	* "Associate .sh ...
+
+2. When prompted to choose the default editor, pick an editor that you know how to use: 
+	* "Nano" is a command line editor that is simple to use for beginners.
+	* "Vim" is a more advanced command line editor that may be confusing for beginners, but is very powerful. 
+	* "Notepadd++" is a simple GUI editor that should be familiar to most.
+
+3. For "Adjust your PATH environment", select:
+	* "Use Git from Git Bash only"
+
+4. For "Choose HTTPS transport backend", select:
+	* "Use the OpenSSL library"
+
+5. For "Configure the line ending conversions", select:
+	* "Checkout Windows-style,..."
+
+6. For "Configure the terminal emulator ...", select:
+	* "Use MinTTY ..."
+
+7. For "Configure extra options", select:
+	* "Enable file system caching"
+	* "Enable Git Credential Manager"
+
+
+
 ### Setup Git with personal macOS
+
+The easiest way to get Git running on macOS is through Homebrew. Homebrew is a package manager for the macOS command line.
+
+Install Homebrew by opening a `Terminal.app` window and typing:
+
+```shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Then install Git by entering:
+
+```shell
+brew install git
+```
+
+You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
+
 
 ### Setup Git with personal Linux 
 
+Most Linux distributions will already have a version of Git installed as standard. Otherwise, you can use your package manager to install it by opening a terminal window and typing something like: `sudo apt-get install git` (Ubuntu, Debian), or `pacman -S git` (Arch).
+
+
 ### Setup Git with a GeoSciences Windows machine
+
+Git bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list.
+
 
 ### Setup Git with a GeoSciences remote Linux session
 
-
+Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
 
 <a name="section4"></a>
 
 ## 4. Learn a basic Git workflow  
+
 
 
 <a name="section3"></a>
