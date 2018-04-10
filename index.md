@@ -12,7 +12,7 @@
 
 ### <a href="#section4"> 4. Setup Github</a>
 
-### <a href="#section5"> 5. Explore commit history</a>
+### <a href="#section5"> 5. Explore the commit history</a>
 
 ### <a href="#section6"> 6. Learn to use multiple branches, merging, pull requests, forks</a>
 
@@ -265,7 +265,7 @@ Now if you head back to Github, you should see that the `geotaster_test` reposit
 
 <a name="section5"></a>
 
-## 5. Explore commit history
+## 5. Explore the commit history
 
 Now we have made a few commits, pulled and then pushed, we can start to see how the Git log is growing. The Git log contains a potted history of all the commits in a repository, complete with the commit messages you wrote earlier on to describe the contents of the commit. To view the Git log, type:
 
@@ -312,17 +312,34 @@ This will show the most recent two commits (`-n 2`), and a breakdown of what has
 If you want to compare a specific commit to the most recent version of the respository, you can use the following, substituting the commit hash with your own:
 
 ```shell
-git diff 1c6787895640eedfda3c1399f3e2171e0761e91 HEAD
+git diff 1c6787895640eedfda3c1399f3e2171e0761e91
 ```
 
-`HEAD` refers to the most recent commit. 
+Similarly you can compare two unique commits by quoting both hashes:
 
+```shell
+git diff 1c6787895640eedfda3c1399f3e2171e0761e91 3cb9b0f7057b0e190060dd4d16ed5e3ef5b53086 
+```
+
+You can also point to commits by their position in the commit history. The following compares the most recent commit and the third most recent commit:
+
+```shell
+git diff HEAD~1 HEAD~3
+```
+
+If you want to play around with a repo that has more commits, merges, branches etc.. Clone a random repo from Github, like [this one, a command line bibliography manager](https://github.com/papis/papis) using the code:
+
+```shell
+cd ~
+
+git https://github.com/papis/papis.git
+```
 
 <a name="section6"></a>
 
 ## 6. Learn to use multiple branches, merging, pull requests, forks
 
-At the moment, if you were to visualise your git commit history in the `gt_git` repository, it would like like this, with a simple linear structure, each:
+At the moment, if you were to visualise your git commit history in the `gt_git` repository, it would like like this, with a simple linear structure, each circle being a commit:
 
 ![](img/commits_simple.png)
 
@@ -350,7 +367,80 @@ git push --set-upstream remote origin shell_test
 
 This will create a new remote branch that the local `shell_test` branch will sync with when you run `git push`.
 
-Make some changes to 
+Make some changes to `example.sh` so that the contents of the file looks like this:
+
+```
+#!/bin/bash
+
+echo "hello world"
+
+read -p 'Location, e.g. London, United Kingdom, Hawes: -  ' loc
+
+curl wttr.in/$loc
+```
+
+Then create a new file called README.md and fill it with text like this:
+
+```shell
+touch README.md
+
+echo "This repo was used in the GeoTaster workshop on Git. `example.sh` shows you the weather for a given location" > README.md 
+```
+
+Now commit these changes to the `shell_test` branch with:
+
+```shell
+git add README.md
+git add example.sh
+
+git commit
+```
+
+In order to make things interesting, switch back to the `master` branch with:
+
+```shell
+git checkout master
+```
+
+And make some changes to that version of `example.sh`, like this:
+
+```
+#!/bin/bash
+
+echo "hello world"
+
+T='gYw'   # The test text
+
+echo -e "\n                 40m     41m     42m     43m\
+     44m     45m     46m     47m";
+
+for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
+           '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
+           '  36m' '1;36m' '  37m' '1;37m';
+  do FG=${FGs// /}
+  echo -en " $FGs \033[$FG  $T  "
+  for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
+    do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
+  done
+  echo;
+done
+echo
+```
+
+Commit those changes to the `master` branch like so:
+
+```shell
+git add example.sh
+
+git commit
+```
+
+If you forget which branch you are on or which branches you have available, you can view them by typing `git branch`.
+
+FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you wil find that there is a conflict!!! Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
+
+
+
 
 
 <a name="section7"></a>
