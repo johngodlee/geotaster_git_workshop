@@ -361,15 +361,15 @@ Up to now we have done everything in the command line. But there are also many G
 
 Github Desktop
 
-![]({img/github_desktop.png)
+![](img/github_desktop.png)
 
 Sourcetree
 
-![]({img/sourcetree.png)
+![](img/sourcetree.png)
 
 GitKraken
 
-![]({img/gitkraken.png)
+![](img/gitkraken.png)
 
 All of them follow similar designs, but you could argue they make simple Git operations easier, such as visualising branch relationships. On the other hand, it is impossible to perform some of the more complex Git operations using these GUIs, and I maintain that once you get to learn the Git command line interface you will be much more efficient and quick than if you used a GUI.
 
