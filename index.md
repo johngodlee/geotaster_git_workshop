@@ -384,7 +384,7 @@ Then create a new file called README.md and fill it with text like this:
 ```shell
 touch README.md
 
-echo "This repo was used in the GeoTaster workshop on Git. `example.sh` shows you the weather for a given location" > README.md 
+echo "This repo was used in the GeoTaster workshop on Git. \`example.sh\` shows you the weather for a given location" > README.md 
 ```
 
 Now commit these changes to the `shell_test` branch with:
@@ -402,7 +402,7 @@ In order to make things interesting, switch back to the `master` branch with:
 git checkout master
 ```
 
-And make some changes to that version of `example.sh`, like this:
+And make some changes to that version of `example.sh`, like this. Notice how this version hasn't changed, even though the `shell_test` version had a load of changes made to it:
 
 ```
 #!/bin/bash
@@ -437,8 +437,46 @@ git commit
 
 If you forget which branch you are on or which branches you have available, you can view them by typing `git branch`.
 
-FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you wil find that there is a conflict!!! Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
+FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you wil find that there is a conflict!!! Specifically that there is a conflict in `example.sh`. Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
 
+Open the offending `example.sh` file in a text editor and you should see this:
+
+```
+#!/bin/bash
+
+echo "hello world"
+
+<<<<<<< HEAD
+T='gYw'   # The test text
+
+echo -e "\n                 40m     41m     42m     43m\
+     44m     45m     46m     47m";
+
+for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
+           '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
+           '  36m' '1;36m' '  37m' '1;37m';
+  do FG=${FGs// /}
+  echo -en " $FGs \033[$FG  $T  "
+  for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
+    do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
+  done
+  echo;
+done
+echo
+=======
+read -p 'Location, e.g. London, United Kingdom, Hawes: -  ' loc
+
+curl wttr.in/$loc
+>>>>>>> shell_test
+```
+
+It might look confusing at first, but `example.sh` now merely contains the code from both of the branches. The code between `<<<<<<< HEAD` and `=======` is the code in the `master` branch, i.e. the branch you are merging into. The code between `=======` and `>>>>>>> shell_test` if the code in the `shell_test` branch, i.e. the branch you are merging from. I think the code which queries the weather is cool, so I'll keep that one by deleting the code from the master branch, along with the branch pointers and the `=======`. Then save and quit the text editor, the conflict is now resolved!
+
+Now you can add the changed file and commit it to finish the merge. When you find yourself back on the `master` branch you can check the contents of `example.sh` to see that it has worked using `cat example.sh`
+
+You might also want to push the changes you just made to the Github remote with `git push`. 
+
+Branching and merging can get much more complicated than that, with three way merges and the like, but for now this workflow will solve 90% of your branching issues.
 
 
 
@@ -690,3 +728,4 @@ If you are part of a lab group, you may find it useful to set up an organisation
 
 [Software Carpentry workshop on Git](http://swcarpentry.github.io/git-novice/)
 
+[Chapter from the official Git guide on merging, including 3 way merges](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
