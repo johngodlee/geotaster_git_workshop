@@ -1,0 +1,35 @@
+---
+
+---
+
+$table-text-align: left !default;
+
+// Import the css from the Jekyll gem
+@import "minima";
+
+pre, code {
+        background-color: #e0e0e0;  // Colour inside code block
+        border: 0.5px solid #2E2E2E;  // Border around code block
+        border-radius: 0px;  // No rounding on code block border corners
+}
+
+.highlighter-rouge .highlight {
+        background: #e0e0e0;  // Also needed to set colour inside code block
+}
+
+// Increase vspace between list items, to improve readability
+li {
+        margin: 10px;
+}
+
+// Increase max width of main content, normally 800px, now 1000px
+.wrapper {
+        max-width: -webkit-calc(1000px - (30px * 2));
+        max-width: calc(1000px - (30px * 2));
+}
+  @media screen and (max-width: 1000px) {
+    .wrapper {
+      max-width: -webkit-calc(1000px - (30px));
+      max-width: calc(1000px - (30px));
+} }
+
