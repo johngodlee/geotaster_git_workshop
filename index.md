@@ -1,6 +1,6 @@
 <center><img src="img/geotaster_git_banner.png" alt="banner"/></center>
 
-# Introduction to Version Control and Git
+# Introduction to Version Control with Git
 
 ## Aims
 
@@ -33,7 +33,33 @@ This workshop will teach you about the basics of using the Git version control s
 ## 1. Understand version control
 
 
-repository
+Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to keep track of how a file has changed. There are a few version control software packages out there, the other notable contender to Git, which shares many similarities, is called Subversion (SVN). 
+
+Version control softwares like Git are are especially useful when you are writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file, this means you could use it when writing LaTeX documents, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`. 
+
+You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files, with inconsistent names, which makes it difficult to compare versions and might lead to confusion.
+
+Another way that version control softwares can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes into a single document. For instance, consider this sentence: 
+
+```
+Many aspects of climate influence and control the distribution of vegetation and plant species.
+```
+
+Imagine that author "A" makes the following change to the original sentence:
+
+```
+Many aspects of climate influence and control the spatial distribution vegetation biomass.
+```
+
+At the same time, author "B" makes this change to the original statement:
+
+```
+Many aspects of climate influence the spatial distribution of plant taxa.
+```
+
+It is unclear which of these changes is the right one, and which should be discarded. For the author that gets the job of merging all the changes back into the final version of the manuscript, this can be a major headache, and it gets much more complicated than the example above. Version control software can help to highlight these conflicts within the document, making them much easier to solve.
+
+It's easy to see why version control software would be useful in academic research, especially with the current emphasis on making our work reproducible and repeatable. With version control software it's easy to make every step of the analytical process transparent, so others can look at your code and how it changed over time, so they can repeat your analyses.
 
 <a name="section2"></a>
 
@@ -224,4 +250,9 @@ Here are a couple of examples of hosted gitbooks:
 
 Free private repositories for academics.
 
+
+
+## 11. Further resources for learning Git
+
+[The Pro Git book](https://git-scm.com/book/en/v2)
 
