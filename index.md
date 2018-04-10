@@ -1,4 +1,4 @@
-<img src"img/geotaster_git_banner.png" class="banner" alt="">
+<img src="img/geotaster_git_banner.png" class="banner" alt="">
 
 # Introduction to Version Control with Git
 
