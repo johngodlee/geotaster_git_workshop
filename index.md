@@ -104,7 +104,6 @@ Run the installer that just downloaded. The following options are what I would r
 
 
 
-<hr>
 ### Setup Git with personal macOS
 
 The easiest way to get Git running on macOS is through Homebrew. Homebrew is a package manager for the macOS command line.
@@ -124,19 +123,16 @@ brew install git
 You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
 
 
-<hr>
 ### Setup Git with personal Linux 
 
 Most Linux distributions will already have a version of Git installed as standard. Otherwise, you can use your package manager to install it by opening a terminal window and typing something like: `sudo apt-get install git` (Ubuntu, Debian), or `pacman -S git` (Arch).
 
 
-<hr>
 ### Setup Git with a GeoSciences Windows machine
 
 Git bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list.
 
 
-<hr>
 ### Setup Git with a GeoSciences remote Linux session
 
 Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
@@ -424,4 +420,8 @@ Free private repositories for academics.
 ## 11. Further resources for learning Git
 
 [The Pro Git book](https://git-scm.com/book/en/v2)
+
+[The Edinburgh University Coding Club tutorial on Github, RStudio and Git](https://ourcodingclub.github.io/2017/02/27/git.html) 
+
+
 
