@@ -1,4 +1,4 @@
-<center><img src="img/geotaster_git_banner.png" alt="banner"/></center>
+![](img/geotaster_git_banner.png)
 
 # Introduction to Version Control with Git
 
