@@ -33,6 +33,8 @@ li {
       max-width: calc(1000px - (30px));
 } }
 
+// Change size of headers
+
 h1, h2, h3, h4 {
 	font-weight: bold;
 }
@@ -51,4 +53,10 @@ h3 {
 	@include media-query($on-laptop) {
 		@include relative-font-size(1.6);
 	}
+}
+
+// Add border around images
+
+img {
+	border: 0.5px solid #2E2E2E;
 }
