@@ -1,4 +1,4 @@
-![](img/geotaster_git_banner.png)
+<img src"img/geotaster_git_banner.png" class="banner" alt="">
 
 # Introduction to Version Control with Git
 
@@ -461,7 +461,7 @@ GitKraken
 
 ![](img/gitkraken.png)
 
-All of them follow similar designs, but you could argue they make simple Git operations easier, such as visualising branch relationships. On the other hand, it is impossible to perform some of the more complex Git operations using these GUIs, and I maintain that once you get to learn the Git command line interface you will be much more efficient and quick than if you used a GUI.
+All of them follow similar designs, and you could argue they make simple Git operations easier, such as visualising branch relationships. On the other hand, it is impossible to perform some of the more complex Git operations using these GUIs, and I maintain that once you get to learn the Git command line interface you will be much more efficient and quick than if you used a GUI.
 
 For now we will stick with the command line, this is just to let you know that GUI options do exist and you can explore them in your own time if you like.
 
