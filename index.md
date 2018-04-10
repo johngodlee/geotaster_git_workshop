@@ -141,15 +141,44 @@ Git bash is already installed on the GeoSciences Windows machines. To run it, si
 
 Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
 
-<a name="section4"></a>
-
-## 4. Learn a basic Git workflow  
-
-
-
 <a name="section3"></a>
 
-## 3. Setup Github 
+## 3. Learn a basic Git workflow  
+
+Now that Git is installed, you can create your first Git repository. A repository is simply the name given to a directory that is being tracked by Git. For this workshop we will create a new directory with some example files in it, but you can follow along with an existing directory of your own if you like.
+
+First navigate to the `home` folder in the terminal like this:
+
+```shell
+cd ~
+```
+
+Then create a new directory:
+
+```shell
+mkdir gt_git
+```
+
+then dive inside that directory:
+
+```shell
+cd gt_git
+```
+
+Now for the first Git commit. Initiate the directory as a Git repository (repo) by typing:
+
+```shell
+git init
+```
+
+If you `ls -A` to show the files, you will now see a subdirectory called `.git`. This subdirectory contains all the information
+
+
+
+
+<a name="section4"></a>
+
+## 4. Setup Github 
 
 In order to demonstrate how to back up Git repositories to a remote server and all the advantages that brings, we will be using [Github](https://github.com) as our remote server host. There are many other Git compatible hosting services, such as [BitBucket](https://bitbucket.org), [GitLab](https://about.gitlab.com) and [Codebase](https://www.codebasehq.com), but Github is the most widely used, so we will stick to that for this demo.
 
