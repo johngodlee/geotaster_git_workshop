@@ -37,3 +37,10 @@ h1, h2, h3, h4 {
 	font-weight: bold;
 }
 
+h3 {
+	@include relative-font-size(1.8);
+
+	@include media-query($on-laptop) {
+		@include relative-font-size(1.75);
+	}
+}
