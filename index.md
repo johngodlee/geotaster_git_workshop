@@ -462,11 +462,18 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <th class="tg-yw4l"><b>Description</b></th>
   </tr>
   <tr>
+    <td class="tg-yw4l">"Click" fork on Github</td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Other Github</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Creates github repo in your personal account from a previously cloned github repo.</td>
+  </tr>
+  <tr>
     <td class="tg-yw4l"><code>git fork</code></td>
     <td class="tg-yw4l">Y</td>
     <td class="tg-yw4l">Other Github</td>
     <td class="tg-yw4l">Personal Github</td>
-    <td class="tg-yw4l">Creates github repo in your personal account from a previously cloned github repo.</td>
+    <td class="tg-yw4l">Creates github repo in your personal account github repo previously cloned to your local machine.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git clone REPO_URL</code></td>
@@ -483,18 +490,18 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <td class="tg-yw4l">Add "README.md" to staging area.</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><code>git commit -m "Message"</code></td>
+    <td class="tg-yw4l"><code>git commit</code></td>
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Staging Area</td>
     <td class="tg-yw4l">Local</td>
-    <td class="tg-yw4l">Commits changes to files to the local repo with the commit message "Message".</td>
+    <td class="tg-yw4l">Commits changes to files to the local repo.</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><code>git commit -a -m "Message"</code></td>
+    <td class="tg-yw4l"><code>git commit -a</code></td>
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Working Dir</td>
     <td class="tg-yw4l">Local</td>
-    <td class="tg-yw4l">adds and commits all file changes to the local repo with the commit message "Message".</td>
+    <td class="tg-yw4l">adds and commits all file changes to the local repo.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git pull</code></td>
@@ -530,6 +537,48 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <td class="tg-yw4l">NA</td>
     <td class="tg-yw4l">NA</td>
     <td class="tg-yw4l">Create a branch called "patch1" from the current branch and switch to it.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git init</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Initialise a directory as a Git repo.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git log</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Display the commit history for the current repo</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git status</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">See which files are staged/unstaged/changed</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git diff</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">See the difference between staged uncomitted changes and the most recent commit</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git stash</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Save uncommitted changes in a temporary version and revert to the most recent commit</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git fetch origin</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Grab most recent material from remote branches in the "origin" remote, but don't immediately merge like <code>git pull</code></td>
   </tr>
 </table>
 
