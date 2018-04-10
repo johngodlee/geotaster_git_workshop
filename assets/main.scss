@@ -8,13 +8,13 @@ $table-text-align: left !default;
 @import "{{ site.theme }}";
 
 pre, code {
-        background-color: #EEFCE3;  // Colour inside code block
+        background-color: #FDF6F0;  // Colour inside code block
         border: 0.5px solid #2E2E2E;  // Border around code block
         border-radius: 0px;  // No rounding on code block border corners
 }
 
 .highlighter-rouge .highlight {
-        background: #EEFCE3;  // Also needed to set colour inside code block
+        background: #FDF6F0;  // Also needed to set colour inside code block
 }
 
 // Increase vspace between list items, to improve readability
