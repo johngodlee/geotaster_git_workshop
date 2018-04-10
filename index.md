@@ -688,5 +688,5 @@ If you are part of a lab group, you may find it useful to set up an organisation
 
 [The Edinburgh University Coding Club tutorial on Github, RStudio and Git](https://ourcodingclub.github.io/2017/02/27/git.html) 
 
-
+[Software Carpentry workshop on Git](http://swcarpentry.github.io/git-novice/)
 
