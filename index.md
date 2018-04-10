@@ -22,7 +22,7 @@
 
 ### <a href="#section9"> 9. Learn more advanced Git commands</a>
 
-### <a href="#section10"> 10. Understand how to use Git for academic research</a>
+### <a href="#section10"> 10. Getting the most out of Github as an academic</a>
 
 This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised.
 
@@ -67,7 +67,6 @@ It's easy to see why version control software would be useful in academic resear
 
 You can either follow along through this workshop on a School of GeoSciences Windows machine, a School of GeoSciences remote Linux session, or a personal laptop running Windows, macOS or Linux. Once you are set up with Git, using one of the methods below, everything else in the workshop will be identical across the different operating systems.
 
-<hr>
 ### Setup Git with personal Windows
 
 Head to [https://git-scm.com/download/win](https://git-scm.com/download/win). Git should start downloading automatically, otherwise, choose the version which is appropriate for your system. Most systems will need the "64-bit Git for Windows Setup".
@@ -411,11 +410,11 @@ Here are a couple of examples of hosted gitbooks:
 
 <a name="section10"></a>
 
-## 10. Understand how to use Git for academic research
+## 10. Getting the most out of Github as an academic
 
-Free private repositories for academics.
+With Github, it is possible to get access to free private repositories if you are an academic. By default, repositories hosted on Github are public, which means that anybody else can view the contents of the files in that repository. This might not be a desirable thing for some academic projects where the risk of getting scooped is unfortunately real. But if you head to [the Github Education page](https://education.github.com/discount_requests/new) you can request a discount as either a student or a researcher and receive free unlimited private repositories, along with some other goodies like software subscriptions and access to a free personal domain name for your website.
 
-
+If you are part of a lab group, you may find it useful to set up an organisational account on Github. Organisational accounts can host shared Git respositories that are available to all the members of the organisation, which makes working on collaborative projects much easier. To set up an organisational account, login to your Github account and go to the main page of [Github.com](https://github.com), then select "New organization" from the dropdown on the top right. Once you have set up your organisation you can invite existing users to be a part of the organisation, and you can head back to [the Github Education page](https://education.github.com/discount_requests/new) to request an organisational education discount.
 
 ## 11. Further resources for learning Git
 
