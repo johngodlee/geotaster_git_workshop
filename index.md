@@ -129,7 +129,7 @@ Most Linux distributions will already have a version of Git installed as standar
 
 ### Setup Git with a GeoSciences Windows machine
 
-Git bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list.
+Git Bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list. This should open a window which behaves like a UNIX terminal window, running the Bash Shell.
 
 
 ### Setup Git with a GeoSciences remote Linux session
@@ -361,19 +361,19 @@ Up to now we have done everything in the command line. But there are also many G
 
 Github Desktop
 
-![]({img/.jpg)
+![]({img/github_desktop.png)
 
 Sourcetree
 
-![]({img/.jpg)
+![]({img/sourcetree.png)
 
 GitKraken
 
-![]({img/.jpg)
+![]({img/gitkraken.png)
 
 All of them follow similar designs, but you could argue they make simple Git operations easier, such as visualising branch relationships. On the other hand, it is impossible to perform some of the more complex Git operations using these GUIs, and I maintain that once you get to learn the Git command line interface you will be much more efficient and quick than if you used a GUI.
 
-For now we will stick with the command line, but this is just to let you know that GUI options do exist and you can expore them in your own time.
+For now we will stick with the command line, this is just to let you know that GUI options do exist and you can explore them in your own time if you like.
 
 
 
@@ -466,21 +466,21 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Other Github</td>
     <td class="tg-yw4l">Personal Github</td>
-    <td class="tg-yw4l">Creates github repo in your personal account from a previously cloned github repo.</td>
+    <td class="tg-yw4l">Creates Github repo in your personal account from a previously cloned Github repo.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git fork</code></td>
     <td class="tg-yw4l">Y</td>
     <td class="tg-yw4l">Other Github</td>
     <td class="tg-yw4l">Personal Github</td>
-    <td class="tg-yw4l">Creates github repo in your personal account github repo previously cloned to your local machine.</td>
+    <td class="tg-yw4l">Creates Github repo in your personal account from Github repo previously cloned to your local machine.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git clone REPO_URL</code></td>
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Personal Github</td>
     <td class="tg-yw4l">Local</td>
-    <td class="tg-yw4l">Creates a local copy of a github repo. The URL can be copied from Github.com by clicking the `Clone or Download` button.</td>
+    <td class="tg-yw4l">Creates a local copy of a Github repo. The URL can be copied from Github.com by clicking the `Clone or Download` button.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git add README.md</code></td>
@@ -508,21 +508,21 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Personal Github</td>
     <td class="tg-yw4l">Local</td>
-    <td class="tg-yw4l">Retrieve any changes from a github repo.</td>
+    <td class="tg-yw4l">Retrieve any changes from a Github repo.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git push</code></td>
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Local</td>
     <td class="tg-yw4l">Personal Github</td>
-    <td class="tg-yw4l">Sends commited file changes to github repo.</td>
+    <td class="tg-yw4l">Sends commited file changes to Github repo.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git create</code></td>
     <td class="tg-yw4l">Y</td>
     <td class="tg-yw4l">Local</td>
     <td class="tg-yw4l">Personal Github</td>
-    <td class="tg-yw4l">Create a github repo with the same name as the local repo.</td>
+    <td class="tg-yw4l">Create a Github repo with the same name as the local repo.</td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>git merge</code></td>
@@ -589,6 +589,8 @@ Once you have `hub` installed and properly aliased, you should be able to use th
 With Github, it is possible to get access to free private repositories if you are an academic. By default, repositories hosted on Github are public, which means that anybody else can view the contents of the files in that repository. This might not be a desirable thing for some academic projects where the risk of getting scooped is unfortunately real. But if you head to [the Github Education page](https://education.github.com/discount_requests/new) you can request a discount as either a student or a researcher and receive free unlimited private repositories, along with some other goodies like software subscriptions and access to a free personal domain name for your website.
 
 If you are part of a lab group, you may find it useful to set up an organisational account on Github. Organisational accounts can host shared Git respositories that are available to all the members of the organisation, which makes working on collaborative projects much easier. To set up an organisational account, login to your Github account and go to the main page of [Github.com](https://github.com), then select "New organization" from the dropdown on the top right. Once you have set up your organisation you can invite existing users to be a part of the organisation, and you can head back to [the Github Education page](https://education.github.com/discount_requests/new) to request an organisational education discount.
+
+![](img/org_acc.png)
 
 ## 11. Further resources for learning Git
 
