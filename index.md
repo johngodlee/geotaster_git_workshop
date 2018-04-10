@@ -67,6 +67,7 @@ It's easy to see why version control software would be useful in academic resear
 
 You can either follow along through this workshop on a School of GeoSciences Windows machine, a School of GeoSciences remote Linux session, or a personal laptop running Windows, macOS or Linux. Once you are set up with Git, using one of the methods below, everything else in the workshop will be identical across the different operating systems.
 
+<hr>
 ### Setup Git with personal Windows
 
 Head to [https://git-scm.com/download/win](https://git-scm.com/download/win). Git should start downloading automatically, otherwise, choose the version which is appropriate for your system. Most systems will need the "64-bit Git for Windows Setup".
@@ -103,6 +104,7 @@ Run the installer that just downloaded. The following options are what I would r
 
 
 
+<hr>
 ### Setup Git with personal macOS
 
 The easiest way to get Git running on macOS is through Homebrew. Homebrew is a package manager for the macOS command line.
@@ -122,16 +124,19 @@ brew install git
 You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
 
 
+<hr>
 ### Setup Git with personal Linux 
 
 Most Linux distributions will already have a version of Git installed as standard. Otherwise, you can use your package manager to install it by opening a terminal window and typing something like: `sudo apt-get install git` (Ubuntu, Debian), or `pacman -S git` (Arch).
 
 
+<hr>
 ### Setup Git with a GeoSciences Windows machine
 
 Git bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list.
 
 
+<hr>
 ### Setup Git with a GeoSciences remote Linux session
 
 Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
