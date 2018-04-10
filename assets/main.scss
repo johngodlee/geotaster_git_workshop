@@ -46,9 +46,9 @@ h2 {
 }
 
 h3 {
-	@include relative-font-size(1.8);
+	@include relative-font-size(1.6);
 
 	@include media-query($on-laptop) {
-		@include relative-font-size(1.8);
+		@include relative-font-size(1.6);
 	}
 }
