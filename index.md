@@ -37,7 +37,7 @@ Version control systems are a way of recording the changes made to a file or dir
 
 Version control softwares like Git are are especially useful when you are writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file, this means you could use it when writing LaTeX documents, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`. 
 
-You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files, with inconsistent names, which makes it difficult to compare versions and might lead to confusion.
+You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files, with inconsistent names, which makes it difficult to compare versions and might lead to confusion.
 
 Another way that version control softwares can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes into a single document. For instance, consider this sentence: 
 
@@ -51,7 +51,7 @@ Imagine that author "A" makes the following change to the original sentence:
 Many aspects of climate influence and control the spatial distribution vegetation biomass.
 ```
 
-At the same time, author "B" makes this change to the original statement:
+But at the same time, author "B" makes this change to the original statement:
 
 ```
 Many aspects of climate influence the spatial distribution of plant taxa.
@@ -406,6 +406,8 @@ Here are a couple of examples of hosted gitbooks:
 <a name="section9"></a>
 
 ## 9. Learn more advanced Git commands 
+
+![](img/git_adv_map.png)
 
 
 <a name="section10"></a>
