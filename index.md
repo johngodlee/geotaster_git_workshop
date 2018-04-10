@@ -407,8 +407,131 @@ Here are a couple of examples of hosted gitbooks:
 
 ## 9. Learn more advanced Git commands 
 
+Here is a map of a more complex Github/Git workflow. This flow chart includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github. 
+
+Mac users can install `hub` using Homebrew. In a terminal window enter:
+
+```shell
+brew install hub
+```
+
+Then add the following to your `.bash_profile` file, which should be found in the `~` directory:
+
+```
+eval "$hub alias -s)"
+```
+
+The process is similar for Linux users, except you will have to compile it from source. The dependencies you need to install are: `make`, "Go 1.8+", and "Ruby 1.9+". Once you have those dependencies sorted, enter the following code in the terminal:
+
+```shell
+cd ~
+
+git clone https://github.com/github/hub.git
+
+cd hub
+
+make install prefix=/usr/local
+```
+
+Then add the following to your `.bashrc`, which should be found in the `~` directory:
+
+```
+eval "$hub alias -s)"
+```
+
+Unfortunately, as far as I know, there isn't a foolproof way to install `hub` to work in Git Bash for Windows.
+
+Once you have `hub` installed and properly aliased, you should be able to use the commands that come with `hub` just by typing `git` followed by the hub command, e.g. `git create` will alias to `hub create`.
+
+
 ![](img/git_adv_map.png)
 
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Command</b></th>
+    <th class="tg-yw4l"><b>Is <code>hub</code> required?</b></th>
+    <th class="tg-yw4l"><b>Origin</b></th>
+    <th class="tg-yw4l"><b>Destination</b></th>
+    <th class="tg-yw4l"><b>Description</b></th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git fork</code></td>
+    <td class="tg-yw4l">Y</td>
+    <td class="tg-yw4l">Other Github</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Creates github repo in your personal account from a previously cloned github repo.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git clone REPO_URL</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">Creates a local copy of a github repo. The URL can be copied from Github.com by clicking the `Clone or Download` button.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git add README.md</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Working Dir</td>
+    <td class="tg-yw4l">Staging Area</td>
+    <td class="tg-yw4l">Add "README.md" to staging area.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git commit -m "Message"</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Staging Area</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">Commits changes to files to the local repo with the commit message "Message".</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git commit -a -m "Message"</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Working Dir</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">adds and commits all file changes to the local repo with the commit message "Message".</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git pull</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">Retrieve any changes from a github repo.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git push</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Sends commited file changes to github repo.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git create</code></td>
+    <td class="tg-yw4l">Y</td>
+    <td class="tg-yw4l">Local</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Create a github repo with the same name as the local repo.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git merge</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Merge any changes in the named branch with the current branch.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><code>git checkout -b patch1</code></td>
+    <td class="tg-yw4l">N</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Create a branch called "patch1" from the current branch and switch to it.</td>
+  </tr>
+</table>
 
 <a name="section10"></a>
 
