@@ -357,7 +357,7 @@ Git log is really customisable, this one liner will show the git branch network 
 git log --all --graph --decorate --oneline --simplify-by-decoration
 ```
 
-![](git_branch_cli.png)
+![](img/git_branch_cli.png)
 
 <a name="section6"></a>
 
