@@ -238,7 +238,7 @@ Once you are registered, head back to [Github](https://github.com) and sign in. 
 
 ![](img/new_repo.png)
 
-You should then be able to click "Repositories" and the big green "New" button to create a repository to which we will back up the local Git repository we created earlier. Give the repository the same name as the local repository, which in this case is `geotaster_test` and click "Create repository".  
+You should then be able to click "Repositories" and the big green "New" button to create a repository to which we will back up the local Git repository we created earlier. Give the repository the same name as the local repository, which in this case is `gt_git` and click "Create repository".  
 
 ![](img/name_repo.png)
 
@@ -246,7 +246,7 @@ Now you will be able to find the link to the newly created respository, either a
 
 ![](img/https_link.png)
 
-Then on the command line, navigate to your `geotaster_test` directory and type the following, replacing `<HTTPS_LINK>` with the link you just copied:
+Then on the command line, navigate to your `gt_git` directory and type the following, replacing `<HTTPS_LINK>` with the link you just copied:
 
 ```shell
 git remote add origin <HTTPS_LINK>
@@ -270,7 +270,14 @@ git push
 
 You don't need to add `-u origin master` after the first time.
 
-Now if you head back to Github, you should see that the `geotaster_test` repository now contains the files that were in the local repository.
+Now if you head back to Github, you should see that the `gt_git` repository now contains the files that were in the local repository.
+
+
+Make a few more inconsequential commits to the `gt_git` repo on your local machine.
+
+It's good practice to always `git pull` changes from the remote server before you `git push` local changes to the remote server. This will ensure that if any collaborators have committed changes to the repository since you last pulled, that there will be no conflicts. I'll say it again, the mantra should be "Commit, Pull, Push"!
+
+![](img/git_flow_remote.png)
 
 <a name="section5"></a>
 
