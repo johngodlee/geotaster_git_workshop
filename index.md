@@ -363,7 +363,7 @@ git log --all --graph --decorate --oneline --simplify-by-decoration
 
 ## 6. Learn to use multiple branches, merging, pull requests, forks
 
-At the moment, if you were to visualise your git commit history in the `gt_git` repository, it would like like this, with a simple linear structure, each circle being a commit:
+At the moment, if you were to visualise your git commit history in the `gt_git` repository, it would like this, with a simple linear structure, each circle being a commit:
 
 ![](img/commits_simple.png)
 
