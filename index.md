@@ -323,7 +323,7 @@ To see more information on a commit, add flags to the `git log` command, e.g.:
 git log -p -n 2
 ```
 
-This will show the most recent two commits (`-n 2`), and a breakdown of what has been changed in that commit compared to the previous one.
+This will show the most recent two commits (`-n 2`), and a breakdown of what has been changed in that commit compared to the previous one (`-p`).
 
 If you want to compare a specific commit to the most recent version of the respository, you can use the following, substituting the commit hash with your own:
 
@@ -337,19 +337,27 @@ Similarly you can compare two unique commits by quoting both hashes:
 git diff 1c6787895640eedfda3c1399f3e2171e0761e91 3cb9b0f7057b0e190060dd4d16ed5e3ef5b53086 
 ```
 
-You can also point to commits by their position in the commit history. The following compares the most recent commit and the third most recent commit:
+You can also point to commits by their relative position in the commit history. The following compares the most recent commit and the third most recent commit:
 
 ```shell
 git diff HEAD~1 HEAD~3
 ```
 
-If you want to play around with a repo that has more commits, merges, branches etc.. Clone a random repo from Github, like [this one, a command line bibliography manager](https://github.com/papis/papis) using the code:
+If you want to play around with git log commands using a repo that has more commits, merges, branches etc.. Clone a random repo from Github, like [this one, a command line bibliography manager](https://github.com/papis/papis) using the code:
 
 ```shell
 cd ~
 
-git https://github.com/papis/papis.git
+git clone https://github.com/papis/papis.git
 ```
+
+Git log is really customisable, this one liner will show the git branch network graphically, producing a really nice visual effect:
+
+```shell
+git log --all --graph --decorate --oneline --simplify-by-decoration
+```
+
+![](git_branch_cli.png)
 
 <a name="section6"></a>
 
@@ -453,7 +461,7 @@ git commit
 
 If you forget which branch you are on or which branches you have available, you can view them by typing `git branch`.
 
-FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you wil find that there is a conflict!!! Specifically that there is a conflict in `example.sh`. Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
+FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you will find that there is a conflict!!! Specifically that there is a conflict in `example.sh`. Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
 
 Open the offending `example.sh` file in a text editor and you should see this:
 
