@@ -24,7 +24,7 @@
 
 ### <a href="#section10"> 10. Getting the most out of Github as an academic</a>
 
-This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised.
+This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised. This workshop isn't a definitive guide to Git, it merely serves as an introduction. If you want to pursue the topic further, follow the resources found at the end of this page.
 
 
 
@@ -35,11 +35,11 @@ This workshop will teach you about the basics of using the Git version control s
 
 Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to keep track of how a file has changed. There are a few version control software packages out there, the other notable contender to Git, which shares many similarities, is called Subversion (SVN). 
 
-Version control softwares like Git are are especially useful when you are writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file, this means you could use it when writing LaTeX documents, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`. 
+Version control softwares like Git are are especially useful when you are writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file, this means you could use it when writing `.tex` documents, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult. 
 
-You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files, with inconsistent names, which makes it difficult to compare versions and might lead to confusion.
+You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files with inconsistent names and subtle differences between them, which makes it difficult to compare versions and might lead to confusion.
 
-Another way that version control softwares can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes into a single document. For instance, consider this sentence: 
+Another way that version control software can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes back into a single document. For instance, consider this sentence: 
 
 ```
 Many aspects of climate influence and control the distribution of vegetation and plant species.
@@ -59,15 +59,18 @@ Many aspects of climate influence the spatial distribution of plant taxa.
 
 It is unclear which of these changes is the right one, and which should be discarded. For the author that gets the job of merging all the changes back into the final version of the manuscript, this can be a major headache, and it gets much more complicated than the example above. Version control software can help to highlight these conflicts within the document, making them much easier to solve.
 
-It's easy to see why version control software would be useful in academic research, especially with the current emphasis on making our work reproducible and repeatable. With version control software it's easy to make every step of the analytical process transparent, so others can look at your code and how it changed over time, so they can repeat your analyses.
+Version control software offers a handy framework within which you can create backup versions of your files to a remote server, meaning you will minimise the risk of losing work if your local computer breaks. 
+
+
+Given the above use cases for Git, namely recording versions, collaborating with others, and making backups, it's easy to see how version control software would be useful in academic research, especially with the current emphasis on making our work reproducible and repeatable. With version control software it's easy to make every step of the analytical process transparent, so others can look at your code and how it changed over time, so they can repeat your analyses.
 
 <a name="section2"></a>
 
 ## 2. Setup Git 
 
-You can either follow along through this workshop on a School of GeoSciences Windows machine, a School of GeoSciences remote Linux session, or a personal laptop running Windows, macOS or Linux. Once you are set up with Git, using one of the methods below, everything else in the workshop will be identical across the different operating systems.
+You can follow along through this workshop on a School of GeoSciences Windows machine, a School of GeoSciences remote Linux session, or a personal laptop running Windows, macOS or Linux. Once you are set up with Git using one of the methods below, everything else in the workshop will be identical across the different operating systems ... I hope.
 
-### Setup Git with personal Windows
+### Setup Git on a personal Windows machine
 
 Head to [https://git-scm.com/download/win](https://git-scm.com/download/win). Git should start downloading automatically, otherwise, choose the version which is appropriate for your system. Most systems will need the "64-bit Git for Windows Setup".
 
@@ -103,7 +106,7 @@ Run the installer that just downloaded. The following options are what I would r
 
 
 
-### Setup Git with personal macOS
+### Setup Git on a personal macOS machine
 
 The easiest way to get Git running on macOS is through Homebrew. Homebrew is a package manager for the macOS command line.
 
@@ -122,17 +125,17 @@ brew install git
 You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
 
 
-### Setup Git with personal Linux 
+### Setup Git on a personal Linux machine 
 
 Most Linux distributions will already have a version of Git installed as standard. Otherwise, you can use your package manager to install it by opening a terminal window and typing something like: `sudo apt-get install git` (Ubuntu, Debian), or `pacman -S git` (Arch).
 
 
-### Setup Git with a GeoSciences Windows machine
+### Setup Git on a GeoSciences Windows machine
 
 Git Bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list. This should open a window which behaves like a UNIX terminal window, running the Bash Shell.
 
 
-### Setup Git with a GeoSciences remote Linux session
+### Setup Git in a GeoSciences remote Linux session
 
 Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
 
@@ -166,7 +169,7 @@ Now for the first Git commit. Initiate the directory as a Git repository (repo) 
 git init
 ```
 
-If you `ls -A` to show the files, you will now see a subdirectory called `.git`. This subdirectory contains all the information used by Git to keep track of file changes in this repo. If you delete `.git`, the directory will cease to be a Git repo.
+If you type `ls -A` to show the files, you will now see a subdirectory called `.git`. This subdirectory contains all the information used by Git to keep track of file changes in this repo. If you delete `.git`, the directory will cease to be a Git repo.
 
 Git keeps track of your files through versions of the repository called "commits". A commit is a snapshot of the repository at a particular point in time.
 
@@ -182,7 +185,7 @@ Now if you type:
 git status
 ```
 
-you will see that Git has noticed that you have added a file, but you have not told Git to track the file. This means that currently, any commits you make will not include `notes.txt`.
+you will see that Git has noticed that you have added a file, but you have not yet told Git to track the file. This means that currently, any commits you make will not include `notes.txt`.
 
 To add the file so Git tracks it, type:
 
@@ -208,14 +211,20 @@ Add a few more commits by changing the contents of `notes.txt` and adding creati
 echo "hello world"
 ```
 
-To view the commits you have made, type the following to get a short description of each commit, with the commit messages that you entered earlier:
+To view the commits you have made, type the following to get a short description of each commit along with the commit messages that you entered earlier:
 
 ```shell 
 git log
 ```
 
-Before we get onto more complicated git commands, we need to setup a remote server which will be used to sync versions of the repo, creating a kind of backup.
+You can type `q` to quit Git log.
 
+This brief example demonstrates the essence of a Git workflow, where you can think of the Git repo broken down into three parts. There is the "working directory", the area where files can be worked on before they are committed. There is also the "staging area" which is where files go once you run `git add`, this is like a preparation area where amended files go before they are committed. Then finally there is the "local repository", which is where finalised file changes go when you run `git commit`.  
+
+![](img/git_flow.png)
+
+
+Before we get onto more complicated git commands, we need to setup a remote server which will be used to sync versions of the repo, creating a kind of backup.
 
 <a name="section4"></a>
 
