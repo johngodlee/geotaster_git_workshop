@@ -24,76 +24,9 @@
 
 ### <a href="#section10"> 10. Configure the `.gitconfig` file</a>
 
-You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To make it so Git remembers your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
-
-```shell
-touch ~/.gitconfig
-```
-
-Open the file in a text editor and enter the following information, replacing `<USERNAME>` and `<EMAIL_ADDRESS>` with your own information you used to register with Github:
-
-```
-[user]
-	name = <USERNAME> 
-	email = <EMAIL_ADDRESS>
-```
-
-You can set other preferences in the `.gitconfig` such as the default text editor you use for commit messages and the pager you use to view Git logs:
-
-```
-[core]
-	editor = vim
-	pager = less
-```
-
-On Windows, if you want to use a graphical editor instead of a terminal based editor, you will have to point to the executable file:
-
-```
-[core]
-	editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession  noPlugin"
-```
-
-On macOS you can normally just use the terminal command::
-
-```
-[core]
-	editor = "atom --wait"
-```
-
-
-You can even set aliases for commonly used Git commands in the `.gitconfig`. In this example, I can type `git network` to display that nifty one liner I showed you earlier to visualise the git branch structure:
-
-```
-[alias]
-	network = log --graph --decorate --pretty=oneline --abbrev-commit --all
-```
-	
-You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a vertain number of minutes (e.g. 3600):
-
-```
-[credential]
-	helper = cache --timeout=3600
-```
-
-or, if you are using macOS you can grab the password from the macOS keychain tool:
-
-```
-[credential]
-	helper = osxkeychain
-```
-
-or, if you are using Windows:
-
-```
-[credential]
-	helper = wincred
-```
-
 ### <a href="#section11"> 11. Getting the most out of Github as an academic</a>
 
 This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised. This workshop isn't a definitive guide to Git, it merely serves as an introduction. If you want to pursue the topic further, follow the resources found at the end of this page.
-
-
 
 <a name="section1"></a>
 
@@ -804,7 +737,76 @@ Once you have `hub` installed and properly aliased, you should be able to use th
 
 <a name="section10"></a>
 
-## 10. Getting the most out of Github as an academic
+## 10. Configure the `.gitconfig` file
+
+You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To make it so Git remembers your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
+
+```shell
+touch ~/.gitconfig
+```
+
+Open the file in a text editor and enter the following information, replacing `<USERNAME>` and `<EMAIL_ADDRESS>` with your own information you used to register with Github:
+
+```
+[user]
+	name = <USERNAME> 
+	email = <EMAIL_ADDRESS>
+```
+
+You can set other preferences in the `.gitconfig` such as the default text editor you use for commit messages and the pager you use to view Git logs:
+
+```
+[core]
+	editor = vim
+	pager = less
+```
+
+On Windows, if you want to use a graphical editor instead of a terminal based editor, you will have to point to the executable file:
+
+```
+[core]
+	editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession  noPlugin"
+```
+
+On macOS you can normally just use the terminal command::
+
+```
+[core]
+	editor = "atom --wait"
+```
+
+
+You can even set aliases for commonly used Git commands in the `.gitconfig`. In this example, I can type `git network` to display that nifty one liner I showed you earlier to visualise the git branch structure:
+
+```
+[alias]
+	network = log --graph --decorate --pretty=oneline --abbrev-commit --all
+```
+	
+You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a vertain number of minutes (e.g. 3600):
+
+```
+[credential]
+	helper = cache --timeout=3600
+```
+
+or, if you are using macOS you can grab the password from the macOS keychain tool:
+
+```
+[credential]
+	helper = osxkeychain
+```
+
+or, if you are using Windows:
+
+```
+[credential]
+	helper = wincred
+```
+
+<a name="section11"></a>
+
+## 11. Getting the most out of Github as an academic
 
 With Github, it is possible to get access to free private repositories if you are an academic. By default, repositories hosted on Github are public, which means that anybody else can view the contents of the files in that repository. This might not be a desirable thing for some academic projects where the risk of getting scooped is unfortunately real. But if you head to [the Github Education page](https://education.github.com/discount_requests/new) you can request a discount as either a student or a researcher and receive free unlimited private repositories, along with some other goodies like software subscriptions and access to a free personal domain name for your website.
 
