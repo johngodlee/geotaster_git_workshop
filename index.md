@@ -615,7 +615,7 @@ Once you have `hub` installed and properly aliased, you should be able to use th
     <th class="tg-yw4l"><b>Description</b></th>
   </tr>
   <tr>
-    <td class="tg-yw4l">"Click" fork on Github</td>
+    <td class="tg-yw4l">Click "fork" on Github</td>
     <td class="tg-yw4l">N</td>
     <td class="tg-yw4l">Other Github</td>
     <td class="tg-yw4l">Personal Github</td>
@@ -680,8 +680,8 @@ Once you have `hub` installed and properly aliased, you should be able to use th
   <tr>
     <td class="tg-yw4l"><code>git merge</code></td>
     <td class="tg-yw4l">N</td>
-    <td class="tg-yw4l">NA</td>
-    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Other branch</td>
+    <td class="tg-yw4l">Current branch</td>
     <td class="tg-yw4l">Merge any changes in the named branch with the current branch.</td>
   </tr>
   <tr>
@@ -729,8 +729,8 @@ Once you have `hub` installed and properly aliased, you should be able to use th
   <tr>
     <td class="tg-yw4l"><code>git fetch origin</code></td>
     <td class="tg-yw4l">N</td>
-    <td class="tg-yw4l">NA</td>
-    <td class="tg-yw4l">NA</td>
+    <td class="tg-yw4l">Personal Github</td>
+    <td class="tg-yw4l">Local</td>
     <td class="tg-yw4l">Grab most recent material from remote branches in the "origin" remote, but don't immediately merge like <code>git pull</code></td>
   </tr>
 </table>
