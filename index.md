@@ -757,7 +757,7 @@ You can set other preferences in the `.gitconfig` such as the default text edito
 
 ```
 [core]
-	editor = vim
+	editor = nano
 	pager = less
 ```
 
