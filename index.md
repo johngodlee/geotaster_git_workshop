@@ -32,15 +32,21 @@ This workshop will teach you about the basics of using the Git version control s
 
 ## 1. Understand version control
 
-
-Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to keep track of how a file has changed over time. There are a few version control software packages out there, which range drastically in their complexity. The other notable contender to Git, which shares many similarities, is called [Subversion](https://subversion.apache.org) (SVN). 
-
-
-Version control softwares like Git are especially useful for writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult. 
+As researchers, many of you will write computer code to analyse data, construct models etc.. In order to ensure that your research is repeatable and reproducible by others, it is important to keep track of how the code develops over time, just as you would document laboratory experiments in a notebook. Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to ensure that you don't make irreversible changes to the file that break the code.
 
 You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files with inconsistent names and subtle differences between them, which makes it difficult to compare versions and might lead to confusion.
 
-Another way that version control software can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes back into a single document. For instance, consider this sentence: 
+There are a few version control software packages out there, which range drastically in their complexity. The other notable contender to Git, which shares many similarities, is called [Subversion](https://subversion.apache.org) (SVN).
+
+There are three principle benefits that come with using version control software in academic research:
+
+### Track changes and prevent errors
+
+Version control softwares like Git are especially useful for writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult.
+
+### Provide a framework for collaborating with others on a project
+
+Another way that version control software can help is by streamlining the way you collaborate with others on a piece of work. For instance, say you are writing an article for peer review with a colleague, you may choose to edit the article manuscript by passing it back and forth between the authors via email, with each author adding changes and comments as they go. This works fine most of the time, but what if you both want to work on the file at the same time? This might result in some sort of conflict when you want to collate the changes back into a single document. For instance, consider this sentence:
 
 ```
 Many aspects of climate influence and control the distribution of vegetation and plant species.
@@ -60,14 +66,14 @@ Many aspects of climate influence the spatial distribution of plant taxa.
 
 It is unclear which of these changes is the right one, and which should be discarded. For the author that gets the job of merging all the changes back into the final version of the manuscript, this can be a major headache, and it gets much more complicated than the example above. Version control software can help to highlight these conflicts within the document, making them much easier to solve.
 
-Version control software offers a handy framework within which you can create backup versions of your files to a remote server, meaning you will minimise the risk of losing work if your local computer breaks. 
+### Create online backups of your project
 
+Version control software offers a handy framework within which you can create backup versions of your files to a remote server, minimising the risk of losing work if your local computer breaks. These backups share the same version history as the local copy of the code, meaning that you can access the entirety of your project from anywhere with an internet connection.
 
-Given the above use cases for Git, namely recording versions, collaborating with others, and making backups, it's easy to see how version control software would be useful in academic research, especially with the current emphasis on making our work reproducible and repeatable. With version control software it's easy to make every step of the analytical process transparent, so others can look at your code and how it changed over time, so they can repeat your analyses.
 
 <a name="section2"></a>
 
-## 2. Setup Git 
+## 2. Setup Git
 
 You can follow along through this workshop on a School of GeoSciences Windows machine, a School of GeoSciences remote Linux session, or a personal laptop running Windows, macOS or Linux. Once you are set up with Git using one of the methods below, everything else in the workshop will be identical across the different operating systems ... I hope.
 
@@ -84,9 +90,9 @@ Run the installer that just downloaded. The following options are what I would r
 	* "Associate .git* ..."
 	* "Associate .sh ...
 
-2. When prompted to choose the default editor, pick an editor that you know how to use: 
+2. When prompted to choose the default editor, pick an editor that you know how to use:
 	* "Nano" is a command line editor that is simple to use for beginners.
-	* "Vim" is a more advanced command line editor that may be confusing for beginners, but is very powerful. 
+	* "Vim" is a more advanced command line editor that may be confusing for beginners, but is very powerful.
 	* "Notepadd++" is a simple GUI editor that should be familiar to most.
 
 3. For "Adjust your PATH environment", select:
@@ -126,7 +132,7 @@ brew install git
 You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
 
 
-### Setup Git on a personal Linux machine 
+### Setup Git on a personal Linux machine
 
 Most Linux distributions will already have a version of Git installed as standard. Otherwise, you can use your package manager to install it by opening a terminal window and typing something like: `sudo apt-get install git` (Ubuntu, Debian), or `pacman -S git` (Arch).
 
@@ -138,11 +144,11 @@ Git Bash is already installed on the GeoSciences Windows machines. To run it, si
 
 ### Setup Git in a GeoSciences remote Linux session
 
-Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.  
+Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.
 
 <a name="section3"></a>
 
-## 3. Learn a basic Git workflow  
+## 3. Learn a basic Git workflow
 
 Now that Git is installed, you can create your first Git repository. A repository is simply the name given to a directory that is being tracked by Git. For this workshop we will create a new directory with some example files in it, but you can follow along with an existing directory of your own if you like.
 
@@ -176,7 +182,7 @@ Git keeps track of your files through versions of the repository called "commits
 
 In order to see how commits work, first create a file called `notes.txt`:
 
-```shell 
+```shell
 touch notes.txt
 ```
 
@@ -214,13 +220,13 @@ echo "hello world"
 
 To view the commits you have made, type the following to get a short description of each commit along with the commit messages that you entered earlier:
 
-```shell 
+```shell
 git log
 ```
 
 You can type `q` to quit Git log.
 
-This brief example demonstrates the essence of a Git workflow, where you can think of the Git repo broken down into three parts. There is the "working directory", the area where files can be worked on before they are committed. There is also the "staging area" which is where files go once you run `git add`, this is like a preparation area where amended files go before they are committed. Then finally there is the "local repository", which is where finalised file changes go when you run `git commit`.  
+This brief example demonstrates the essence of a Git workflow, where you can think of the Git repo broken down into three parts. There is the "working directory", the area where files can be worked on before they are committed. There is also the "staging area" which is where files go once you run `git add`, this is like a preparation area where amended files go before they are committed. Then finally there is the "local repository", which is where finalised file changes go when you run `git commit`.
 
 ![](img/git_flow.png)
 
@@ -229,7 +235,7 @@ Before we get onto more complicated git commands, we need to setup a remote serv
 
 <a name="section4"></a>
 
-## 4. Setup Github 
+## 4. Setup Github
 
 In order to demonstrate how to back up Git repositories to a remote server and all the advantages that brings, we will be using [Github](https://github.com) as our remote server host. There are many other Git compatible hosting services, such as [BitBucket](https://bitbucket.org), [GitLab](https://about.gitlab.com) and [Codebase](https://www.codebasehq.com), but Github is the most widely used, so we will stick to that for this demo.
 
@@ -239,7 +245,7 @@ Once you are registered, head back to [Github](https://github.com) and sign in. 
 
 ![](img/new_repo.png)
 
-You should then be able to click "Repositories" and the big green "New" button to create a repository to which we will back up the local Git repository we created earlier. Give the repository the same name as the local repository, which in this case is `gt_git` and click "Create repository".  
+You should then be able to click "Repositories" and the big green "New" button to create a repository to which we will back up the local Git repository we created earlier. Give the repository the same name as the local repository, which in this case is `gt_git` and click "Create repository".
 
 ![](img/name_repo.png)
 
@@ -335,7 +341,7 @@ git diff 1c6787895640eedfda3c1399f3e2171e0761e91
 Similarly you can compare two unique commits by quoting both hashes:
 
 ```shell
-git diff 1c6787895640eedfda3c1399f3e2171e0761e91 3cb9b0f7057b0e190060dd4d16ed5e3ef5b53086 
+git diff 1c6787895640eedfda3c1399f3e2171e0761e91 3cb9b0f7057b0e190060dd4d16ed5e3ef5b53086
 ```
 
 You can also point to commits by their relative position in the commit history. The following compares the most recent commit and the third most recent commit:
@@ -409,7 +415,7 @@ Then create a new file called README.md and fill it with text like this:
 ```shell
 touch README.md
 
-echo "This repo was used in the GeoTaster workshop on Git. \`example.sh\` shows you the weather for a given location" > README.md 
+echo "This repo was used in the GeoTaster workshop on Git. \`example.sh\` shows you the weather for a given location" > README.md
 ```
 
 Now commit these changes to the `shell_test` branch with:
@@ -499,7 +505,7 @@ It might look confusing at first, but `example.sh` now merely contains the code 
 
 Now you can add the changed file and commit it to finish the merge. When you find yourself back on the `master` branch you can check the contents of `example.sh` to see that it has worked using `cat example.sh`
 
-You might also want to push the changes you just made to the Github remote with `git push`. 
+You might also want to push the changes you just made to the Github remote with `git push`.
 
 Branching and merging can get much more complicated than that, with three way merges and the like, but for now this workflow will solve 90% of your branching issues.
 
@@ -532,22 +538,22 @@ For now we will stick with the command line, this is just to let you know that G
 
 <a name="section8"></a>
 
-## 8. Explore extra services built around Github 
+## 8. Explore extra services built around Github
 
 The Github ecosystem encompasses more than just the basic remote repository server. Github has additional services and integrations that may be very useful for academic research. We won't go into great detail about these services, this is merely to let you know that they exist. Many more services can be found on the [Github marketplace](https://github.com/marketplace), though a good number of them require expensive subscriptions. Below are two integrations which are free an useful for academics.
 
 ### Host websites on Github
 
-An increasing number of academics have some sort of professional webpage which they use to advertise projects and blog about their research and what their lab group is doing. Github offers a useful service for hosting webpages for free, called [Github-pages](https://pages.github.com). Github-pages can host HTML pages with CSS and Javascript elements stored in a Github repository. So you can edit your personal page on your local machine, then push it to Github, which triggers the page to be re-built automatically. Additionally, if you're not into writing lots of raw HTML, CSS, and Javascript, Github-pages integrates with a service called [Jekyll](https://jekyllrb.com). Jekyll is a static-site generator that takes a folder of plain text files and compiles them into a website for you, using a template design. The plain text files are written in [Markdown](https://en.wikipedia.org/wiki/Markdown), which is a very easy to read and write markup language. [This website is even built using Jekyll](https://github.com/johngodlee/geotaster_git_workshop)! 
+An increasing number of academics have some sort of professional webpage which they use to advertise projects and blog about their research and what their lab group is doing. Github offers a useful service for hosting webpages for free, called [Github-pages](https://pages.github.com). Github-pages can host HTML pages with CSS and Javascript elements stored in a Github repository. So you can edit your personal page on your local machine, then push it to Github, which triggers the page to be re-built automatically. Additionally, if you're not into writing lots of raw HTML, CSS, and Javascript, Github-pages integrates with a service called [Jekyll](https://jekyllrb.com). Jekyll is a static-site generator that takes a folder of plain text files and compiles them into a website for you, using a template design. The plain text files are written in [Markdown](https://en.wikipedia.org/wiki/Markdown), which is a very easy to read and write markup language. [This website is even built using Jekyll](https://github.com/johngodlee/geotaster_git_workshop)!
 
 Here are some more examples of websites that are hosted using Jekyll and Github-pages:
 
-* [https://ourcodingclub.github.io](https://ourcodingclub.github.io) 
+* [https://ourcodingclub.github.io](https://ourcodingclub.github.io)
 * [https://seosaw.github.io](https://seosaw.github.io)
 
 ### Host documentation and books on Github
 
-[Gitbooks](https://legacy.gitbook.com) are a great way of hosting the documentation for a product online, for free, using version control software. Gitbooks use Markdown, just like Github-pages, and link together many Markdown documents using a web interface that provides a table of contents as a way to easily navigate through nested sections. 
+[Gitbooks](https://legacy.gitbook.com) are a great way of hosting the documentation for a product online, for free, using version control software. Gitbooks use Markdown, just like Github-pages, and link together many Markdown documents using a web interface that provides a table of contents as a way to easily navigate through nested sections.
 
 Here are a couple of examples of hosted gitbooks:
 
@@ -558,9 +564,9 @@ Here are a couple of examples of hosted gitbooks:
 
 <a name="section9"></a>
 
-## 9. Learn more advanced Git commands 
+## 9. Learn more advanced Git commands
 
-Here is a map of a more complex Github/Git workflow. This flow chart includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github. 
+Here is a map of a more complex Github/Git workflow. This flow chart includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github.
 
 Mac users can install `hub` using Homebrew. In a terminal window enter:
 
@@ -749,7 +755,7 @@ Open the file in a text editor and enter the following information, replacing `<
 
 ```
 [user]
-	name = <USERNAME> 
+	name = <USERNAME>
 	email = <EMAIL_ADDRESS>
 ```
 
@@ -782,7 +788,7 @@ You can even set aliases for commonly used Git commands in the `.gitconfig`. In 
 [alias]
 	network = log --graph --decorate --pretty=oneline --abbrev-commit --all
 ```
-	
+
 You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a vertain number of minutes (e.g. 3600):
 
 ```
@@ -818,8 +824,10 @@ If you are part of a lab group, you may find it useful to set up an organisation
 
 [The Pro Git book](https://git-scm.com/book/en/v2)
 
-[The Edinburgh University Coding Club tutorial on Github, RStudio and Git](https://ourcodingclub.github.io/2017/02/27/git.html) 
+[The Edinburgh University Coding Club tutorial on Github, RStudio and Git](https://ourcodingclub.github.io/2017/02/27/git.html)
 
 [Software Carpentry workshop on Git](http://swcarpentry.github.io/git-novice/)
 
 [Chapter from the official Git guide on merging, including 3 way merges](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+[An essay on Git and Github in academia](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668)
