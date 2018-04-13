@@ -22,7 +22,74 @@
 
 ### <a href="#section9"> 9. Learn more advanced Git commands</a>
 
-### <a href="#section10"> 10. Getting the most out of Github as an academic</a>
+### <a href="#section10"> 10. Configure the `.gitconfig` file</a>
+
+You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To make it so Git remembers your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
+
+```shell
+touch ~/.gitconfig
+```
+
+Open the file in a text editor and enter the following information, replacing `<USERNAME>` and `<EMAIL_ADDRESS>` with your own information you used to register with Github:
+
+```
+[user]
+	name = <USERNAME> 
+	email = <EMAIL_ADDRESS>
+```
+
+You can set other preferences in the `.gitconfig` such as the default text editor you use for commit messages and the pager you use to view Git logs:
+
+```
+[core]
+	editor = vim
+	pager = less
+```
+
+On Windows, if you want to use a graphical editor instead of a terminal based editor, you will have to point to the executable file:
+
+```
+[core]
+	editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession  noPlugin"
+```
+
+On macOS you can normally just use the terminal command::
+
+```
+[core]
+	editor = "atom --wait"
+```
+
+
+You can even set aliases for commonly used Git commands in the `.gitconfig`. In this example, I can type `git network` to display that nifty one liner I showed you earlier to visualise the git branch structure:
+
+```
+[alias]
+	network = log --graph --decorate --pretty=oneline --abbrev-commit --all
+```
+	
+You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a vertain number of minutes (e.g. 3600):
+
+```
+[credential]
+	helper = cache --timeout=3600
+```
+
+or, if you are using macOS you can grab the password from the macOS keychain tool:
+
+```
+[credential]
+	helper = osxkeychain
+```
+
+or, if you are using Windows:
+
+```
+[credential]
+	helper = wincred
+```
+
+### <a href="#section11"> 11. Getting the most out of Github as an academic</a>
 
 This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised. This workshop isn't a definitive guide to Git, it merely serves as an introduction. If you want to pursue the topic further, follow the resources found at the end of this page.
 
@@ -33,10 +100,10 @@ This workshop will teach you about the basics of using the Git version control s
 ## 1. Understand version control
 
 
-Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to keep track of how a file has changed over time. There are a few version control software packages out there, which range drastically in their complexity. The other notable contender to Git, which shares many similarities, is called Subversion (SVN). 
+Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to keep track of how a file has changed over time. There are a few version control software packages out there, which range drastically in their complexity. The other notable contender to Git, which shares many similarities, is called [Subversion](https://subversion.apache.org) (SVN). 
 
 
-Version control softwares like Git are especially useful when you are writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult. 
+Version control softwares like Git are especially useful for writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult. 
 
 You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files with inconsistent names and subtle differences between them, which makes it difficult to compare versions and might lead to confusion.
 
