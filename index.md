@@ -204,7 +204,7 @@ Now if you type:
 git status
 ```
 
-you will see that Git has noticed that you have added a file, but you have not yet told Git to track the file. This means that currently, any commits you make will not include `notes.txt`.
+you will see that Git has noticed that you have added a file, but you have not yet told Git to track the file. This means that currently, any commits (versions of the directory) you make will not include `notes.txt`.
 
 To add the file so Git tracks it, type:
 
@@ -784,7 +784,7 @@ You can set other preferences in the `.gitconfig` such as the default text edito
 	pager = less
 ```
 
-On Windows, if you want to use a graphical editor instead of a terminal based editor, you will have to point to the executable file:
+On Windows, if you want to use a graphical editor instead of a terminal based editor, you will have to point to the executable file. Note that this probably won't work on the University computers because of their peculiar file system:
 
 ```
 [core]
@@ -848,3 +848,15 @@ If you are part of a lab group, you may find it useful to set up an organisation
 [Chapter from the official Git guide on merging, including 3 way merges](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 [An essay on Git and Github in academia](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668)
+
+## Git glossary
+
+* __Commit__ - A version of the Git repository
+* __Branch__ - A set of commits which follow a chronological order
+* __Repository__ - A directory which has uses Git version control, denoted by the presence of the `.git` folder
+* __Remote__ - A copy of the repository that isn't stored on your local machine. Instead it is often stored on an external server, like Github
+* __GUI__ - A Graphical User Interface, uses buttons and stuff in an attempt to make things easier for the user.
+* __Bash__ - The __B__ourne __A__gain __Sh__ell, a program which you can use to interface with the computer via a terminal
+* __Terminal__ - A text only interface, which allows you to send commands to the computer
+* __SSH__ - A command line program allowing you to connect to other computers over a netwrok connection
+
