@@ -529,22 +529,21 @@ Branching and merging can get much more complicated than that, with three way me
 
 
 
-
 <a name="section7"></a>
 
 ## 7. Explore the many Git GUIs
 
 Up to now we have done everything in the command line. But there are also many GUI interfaces for Git. Some notable ones include:
 
-Github Desktop
+__Github Desktop__
 
 ![](img/github_desktop.png)
 
-Sourcetree
+__Sourcetree__
 
 ![](img/sourcetree.png)
 
-GitKraken
+__GitKraken__
 
 ![](img/gitkraken.png)
 
