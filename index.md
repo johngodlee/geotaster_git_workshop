@@ -22,7 +22,7 @@
 
 ### <a href="#section9"> 9. Learn more advanced Git commands</a>
 
-### <a href="#section10"> 10. Configure the `.gitconfig` file</a>
+### <a href="#section10"> 10. Configure the .gitconfig file</a>
 
 ### <a href="#section11"> 11. Getting the most out of Github as an academic</a>
 
@@ -32,11 +32,11 @@ This workshop will teach you about the basics of using the Git version control s
 
 ## 1. Understand version control
 
-As researchers, many of you will write computer code to analyse data, construct models etc.. In order to ensure that your research is repeatable and reproducible by others, it is important to keep track of how the code develops over time, just as you would document laboratory experiments in a notebook. Version control systems are a way of recording the changes made to a file or directory of files over time. This allows you to easily recall specific past versions of your files, and helps to ensure that you don't make irreversible changes to the file that break the code.
+As researchers, many of you will write computer code to analyse data, construct models etc.. In order to ensure that your research is repeatable and reproducible by others, it is important to keep track of how the code develops over time, just as you would document laboratory experiments in a notebook. Version control systems are a way of recording the changes made to a file or directory of files. This allows you to easily recall specific past versions of your files, and helps to ensure that you don't make irreversible changes to the file that break the code.
 
 You may be implementing some sort of _ad hoc_ version control system in your work already. For instance, you might have a directory full of files called `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`, `Diss_Final_FINAL_URGHHH.R`, etc.. While this approach might work for a little while, it will inevitably lead to a directory full of tens or hundreds of files with inconsistent names and subtle differences between them, which makes it difficult to compare versions and might lead to confusion.
 
-There are a few version control software packages out there, which range drastically in their complexity. The other notable contender to Git, which shares many similarities, is called [Subversion](https://subversion.apache.org) (SVN).
+There are a few version control software packages out there, which range drastically in their complexity. The other notable contenders to Git, which share many similarities, are [Subversion](https://subversion.apache.org) (SVN), and [Mercurial](https://www.mercurial-scm.org).
 
 There are three principle benefits that come with using version control software in academic research:
 
@@ -139,12 +139,24 @@ Most Linux distributions will already have a version of Git installed as standar
 
 ### Setup Git on a GeoSciences Windows machine
 
-Git Bash is already installed on the GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list. This should open a window which behaves like a UNIX terminal window, running the Bash Shell.
+Git Bash is already installed on some GeoSciences Windows machines. To run it, simply click it in the Start menu Programs list. This should open a window which behaves like a UNIX terminal window, running the Bash Shell.
+
+If you don't have Git Bash on your machine, I would recommend using a remote Linux session on the Windows computers, using PuTTY or NoMachine, see below for more detailed instructions on how to do this.
 
 
 ### Setup Git in a GeoSciences remote Linux session
 
 Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.
+
+I would recommend using PuTTY, which is a program you can access from the GeoSciences Drive. Open Windows File Explorer and head to:
+
+```
+U:\SCE\GEOS
+```
+
+Then find the `putty` program in that directory. Make sure you select `putty` and not `Geos PuTTY`. Open it and enter `geos.ed.ac.uk` into the "Host Name (or IP address)" box. Then click "Open". You should be able to log on using your normal University UUN number (e.g. `s1234567`) and passwrod which you use to log in to the Windows machines. 
+
+You should then find yourself in a terminal environment, this terminal environment has Git installed.
 
 <a name="section3"></a>
 
