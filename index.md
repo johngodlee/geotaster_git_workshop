@@ -513,7 +513,13 @@ curl wttr.in/$loc
 >>>>>>> shell_test
 ```
 
-It might look confusing at first, but `example.sh` now merely contains the code from both of the branches. The code between `<<<<<<< HEAD` and `=======` is the code in the `master` branch, i.e. the branch you are merging into. The code between `=======` and `>>>>>>> shell_test` if the code in the `shell_test` branch, i.e. the branch you are merging from. I think the code which queries the weather is cool, so I'll keep that one by deleting the code from the master branch, along with the branch pointers and the `=======`. Then save and quit the text editor, the conflict is now resolved!
+It might look confusing at first, but `example.sh` now merely contains the code from both of the branches. 
+
+The code between `<<<<<<< HEAD` and `=======` is the code in the `master` branch, i.e. the branch you are merging into. 
+
+The code between `=======` and `>>>>>>> shell_test` if the code in the `shell_test` branch, i.e. the branch you are merging from. 
+
+To illustrate an example, I think the code which queries the weather is much cooler than the code which outputs lots of colours, so I'll keep that one by deleting the code for the other one from the master branch, along with the branch pointers and the `=======`. Then save and quit the text editor, the conflict is now resolved!
 
 Now you can add the changed file and commit it to finish the merge. When you find yourself back on the `master` branch you can check the contents of `example.sh` to see that it has worked using `cat example.sh`
 
