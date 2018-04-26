@@ -400,7 +400,7 @@ To create a new branch type:
 git checkout -b shell_test
 ```
 
-This will create a new branch called `shell_test` and switch you to that branch.
+This will create a new branch called `shell_test` and switch you to that branch. The `-b` flag tells Git to create the branch. If I typed the above without the `-b` flag, it would attempt to find a branch called `shell_test` and switch to it.
 
 Now, the first thing you should do with your new branch is sync it to the remote Github version of the repo. To do this, type:
 
@@ -853,7 +853,10 @@ If you are part of a lab group, you may find it useful to set up an organisation
 
 * __Commit__ - A version of the Git repository
 * __Branch__ - A set of commits which follow a chronological order
+* __Pull Request__ - Asking to merge two branches together
+* __Fork__ - Making a copy of somebody elses Git repository
 * __Repository__ - A directory which has uses Git version control, denoted by the presence of the `.git` folder
+* __Github__ - A company which provides an online backup system which provides support for Git version control.
 * __Remote__ - A copy of the repository that isn't stored on your local machine. Instead it is often stored on an external server, like Github
 * __GUI__ - A Graphical User Interface, uses buttons and stuff in an attempt to make things easier for the user.
 * __Bash__ - The __B__ourne __A__gain __Sh__ell, a program which you can use to interface with the computer via a terminal
