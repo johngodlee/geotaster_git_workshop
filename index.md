@@ -32,6 +32,8 @@
 
 This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised. This workshop isn't a definitive guide to Git, it merely serves as an introduction. If you want to pursue the topic further, follow the resources found at the end of this page.
 
+This workshop assumes a tiny bit of prior knowledge about navigating the file system from the command line. You should know that `cd` (e.g. `cd ~/Desktop`) is used to change directories, the same as if you clicked on the directory in a file explorer. You should also know that `ls` is used to display the contents of a directory. If you don't understand something, please ask.
+
 <a name="section1"></a>
 
 ## 1. Understand version control
@@ -46,7 +48,7 @@ There are three principle benefits that come with using version control software
 
 ### Track changes and prevent errors
 
-Version control softwares like Git are especially useful for writing computer code. If a change you have made breaks the code, you can easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, `.csv` data files etc. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult.
+Version control softwares like Git are especially useful for writing computer code. If a change you have made breaks the code, Git allows you to easily compare the code with a previous working version to find out what the problem is. You can then either revert completely to the previous version, or amend the current code to fix the problem. However, version control software can be used effectively with any plain text file. This means you could use it when writing prose as a `.tex` document, `.txt` or `.md` notes, or `.csv` data files. In fact, Git can (technically) be used with any type of file, including binary files like `.docx` or `.png`, though comparing versions of these files is more difficult.
 
 ### Provide a framework for collaborating with others on a project
 
@@ -59,7 +61,7 @@ Many aspects of climate influence and control the distribution of vegetation and
 Imagine that author "A" makes the following change to the original sentence:
 
 ```
-Many aspects of climate influence and control the spatial distribution vegetation biomass.
+Many aspects of climate influence and control the spatial distribution of biomass.
 ```
 
 But at the same time, author "B" makes this change to the original statement:
@@ -72,7 +74,7 @@ It is unclear which of these changes is the right one, and which should be disca
 
 ### Create online backups of your project
 
-Version control software offers a handy framework within which you can create backup versions of your files to a remote server, minimising the risk of losing work if your local computer breaks. These backups share the same version history as the local copy of the code, meaning that you can access the entirety of your project from anywhere with an internet connection.
+Version control software offers a handy method for creating backup versions of your files and syncing them with a remote server. This minimises the risk of losing work if your local computer breaks. These backups share the same version history as the local copy of the code, meaning that you can access the entirety of your project from anywhere with an internet connection.
 
 
 <a name="section2"></a>
@@ -133,7 +135,7 @@ Then install Git by entering:
 brew install git
 ```
 
-You can then use Git commands from the terminal by typing `git` followed by the command, from any directory.
+You can then use Git commands from `Terminal.app` by typing `git` followed by the command, from any directory.
 
 
 ### Setup Git on a personal Linux machine
@@ -150,7 +152,7 @@ If you don't have Git Bash on your machine, I would recommend using a remote Lin
 
 ### Setup Git in a GeoSciences remote Linux session
 
-Git is already installed on `burn`, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.
+Git is already installed on, the GeoSciences Linux server. Simply login to a `burn` session using whatever method you normally use, then run Git commands from the terminal by typing `git` followed by a command, from any directory.
 
 I would recommend using PuTTY, which is a program you can access from the GeoSciences Drive. Open Windows File Explorer and head to:
 
@@ -158,9 +160,10 @@ I would recommend using PuTTY, which is a program you can access from the GeoSci
 U:\SCE\GEOS
 ```
 
-Then find the `putty` program in that directory. Make sure you select `putty` and not `Geos PuTTY`. Open it and enter `geos.ed.ac.uk` into the "Host Name (or IP address)" box. Then click "Open". You should be able to log on using your normal University UUN number (e.g. `s1234567`) and passwrod which you use to log in to the Windows machines. 
+Then find the `putty` program in that directory. Make sure you select `putty` and not `Geos PuTTY`. Open it and enter `burn.geos.ed.ac.uk` into the "Host Name (or IP address)" box. Then click "Open". You should be able to log on using your normal University UUN number (e.g. `s1234567`) and passwrod which you use to log in to the Windows machines. If `burn.geos.ed.ac.uk` doesn't work, you might want to try `nx.geos.ed.ac.uk`. 
 
 You should then find yourself in a terminal environment, this terminal environment has Git installed.
+
 
 <a name="section3"></a>
 
@@ -186,7 +189,7 @@ then dive inside that directory:
 cd gt_git
 ```
 
-Now for the first Git commit. Initiate the directory as a Git repository (repo) by typing:
+Now for the first Git command. Initiate the directory as a Git repository (repo) by typing:
 
 ```shell
 git init
@@ -208,7 +211,7 @@ Now if you type:
 git status
 ```
 
-you will see that Git has noticed that you have added a file, but you have not yet told Git to track the file. This means that currently, any commits (versions of the directory) you make will not include `notes.txt`.
+you will see that Git has noticed that you have added a file, but you have not yet told Git to track the file. This means that currently, any commits (versions of the repository) you make will not include `notes.txt`.
 
 To add the file so Git tracks it, type:
 
@@ -224,9 +227,11 @@ To create a commit and take a snapshot of the repo, type:
 git commit
 ```
 
-This will trigger a text editor to open where you can write a short message describing what has changed in this commit. In this instance I might write something like `Created notes.txt, empty`. Then save and exit the editor and the commit will be processed. This commit is now a snapshot that you can return to at any time in the future.
+This will trigger a text editor to open where you can write a short message describing what has changed in this commit. In this instance I might write something like `Created notes.txt, empty`. Then save and exit the editor and the commit will be processed. This commit is now a snapshot that you can return to at any time in the future. 
 
-Add a few more commits by changing the contents of `notes.txt` and adding creating some files called `example.txt` and `example.sh`. Fill example.txt with whatever you like, and fill `example.sh` with the following:
+Note: if the text editor that is opened is "Vim" you might wonder why nothing is appearing when you type. Press `i` to enter "insert" mode, then do all your typing, then press `<Esc>` to exit insert mode. To save and quit type `:wq`.
+
+Add a few more commits by changing the contents of `notes.txt` and adding creating some files called `example.txt` and `example.sh` using the `touch` method I mentioned above. Fill `example.txt` with whatever you like, and fill `example.sh` with the following:
 
 ```shell
 #!/bin/bash
@@ -242,7 +247,7 @@ git log
 
 You can type `q` to quit Git log.
 
-This brief example demonstrates the essence of a Git workflow, where you can think of the Git repo broken down into three parts. There is the "working directory", the area where files can be worked on before they are committed. There is also the "staging area" which is where files go once you run `git add`, this is like a preparation area where amended files go before they are committed. Then finally there is the "local repository", which is where finalised file changes go when you run `git commit`.
+This brief example demonstrates the essence of a Git workflow, where you can think of the Git repo being broken down into three parts. There is the "working directory", the area where files can be worked on before they are committed. There is also the "staging area" which is where files go once you run `git add`, this is like a preparation area where amended files go before they are committed. Then finally there is the "local repository", which is where finalised file changes go when you run `git commit`.
 
 ![](img/git_flow.png)
 
@@ -285,20 +290,19 @@ git push -u origin master
 
 This will backup any committed files in the local repository to the remote repository.
 
-If you want to back up more commits, you can just type:
+If you want to back up more commits, you don't need to add `-u origin master` after the first time, just type:
 
 ```shell
 git push
 ```
 
-You don't need to add `-u origin master` after the first time.
 
 Now if you head back to Github, you should see that the `gt_git` repository now contains the files that were in the local repository.
 
-
-Make a few more inconsequential commits to the `gt_git` repo on your local machine.
-
 It's good practice to always `git pull` changes from the remote server before you `git push` local changes to the remote server. This will ensure that if any collaborators have committed changes to the repository since you last pulled, that there will be no conflicts. I'll say it again, the mantra should be "Commit, Pull, Push"!
+
+Make a few more inconsequential commits to the `gt_git` repo on your local machine, to practice making commits. Remember, the flow is: "Make changes" -> `git add` -> `git commit` -> `git pull` -> `git push`!!
+
 
 ![](img/git_flow_remote.png)
 
@@ -306,7 +310,7 @@ It's good practice to always `git pull` changes from the remote server before yo
 
 ## 5. Explore the commit history
 
-Now we have made a few commits, pulled and then pushed, we can start to see how the Git log is growing. The Git log contains a potted history of all the commits in a repository, complete with the commit messages you wrote earlier on to describe the contents of the commit. To view the Git log, type:
+Now we have made a few commits, pulled and then pushed, we can start to see how the Git log is growing. The Git log contains a potted history of all the commits in a repository, complete with the commit messages you wrote earlier to describe the contents of the commit. To view the Git log, type:
 
 ```shell
 git log
@@ -332,7 +336,7 @@ Date:   Tue Apr 3 20:05:31 2018 +0100
 
 In this case there are two commits. Let's go through it line by line.
 
-The first line of each commit contains the commit hash (`commit 99f9ca68788a2344b639bacbd08d0a9b55fa190d`), which is a string of numbers and letters which provides a unique identifier for each commit. You can use these commit hashes in more complicated Git commands to point to specific commits
+The first line of each commit contains the commit hash (`commit 99f9ca68788a2344b639bacbd08d0a9b55fa190d`), which is a string of numbers and letters which provides a unique identifier for each commit. You can use these commit hashes in more complicated Git commands to point to specific commits.
 
 The second line shows the author of that commit, simple enough.
 
@@ -366,7 +370,7 @@ You can also point to commits by their relative position in the commit history. 
 git diff HEAD~1 HEAD~3
 ```
 
-If you want to play around with git log commands using a repo that has more commits, merges, branches etc.. Clone a random repo from Github, like [this one, a command line bibliography manager](https://github.com/papis/papis) using the code:
+If you want to play around with git log commands using a repo that has more commits, merges, branches etc.. Clone a random repo from Github, like [this one, a command line bibliography manager](https://github.com/papis/papis) and then explore it with `git log`, using the code:
 
 ```shell
 cd ~
@@ -426,7 +430,7 @@ read -p 'Location, e.g. London, United Kingdom, Hawes: -  ' loc
 curl wttr.in/$loc
 ```
 
-Then create a new file called README.md and fill it with text like this:
+Then create a new file called `README.md` and fill it with text like this:
 
 ```shell
 touch README.md
@@ -449,7 +453,7 @@ In order to make things interesting, switch back to the `master` branch with:
 git checkout master
 ```
 
-And make some changes to that version of `example.sh`, like this. Notice how this version hasn't changed, even though the `shell_test` version had a load of changes made to it:
+Then make some changes to that version of `example.sh`, so it looks like the version below. Notice how this version hasn't changed, even though the version on the `shell_test` branch had a load of changes made to it:
 
 ```
 #!/bin/bash
@@ -523,7 +527,7 @@ The code between `<<<<<<< HEAD` and `=======` is the code in the `master` branch
 
 The code between `=======` and `>>>>>>> shell_test` if the code in the `shell_test` branch, i.e. the branch you are merging from. 
 
-To illustrate an example, I think the code which queries the weather is much cooler than the code which outputs lots of colours, so I'll keep that one by deleting the code for the other one from the master branch, along with the branch pointers and the `=======`. Then save and quit the text editor, the conflict is now resolved!
+To illustrate an example, I think the code which queries the weather is much cooler than the code which outputs lots of colours, so I'll keep that one by deleting the code for the other one from the master branch, along with the branch pointers (`<<<<<<< HEAD`) and the `=======`. Then save and quit the text editor, the conflict is now resolved!
 
 Now you can add the changed file and commit it to finish the merge. When you find yourself back on the `master` branch you can check the contents of `example.sh` to see that it has worked using `cat example.sh`
 
@@ -533,7 +537,7 @@ Branching and merging can get much more complicated than that, with three way me
 
 ### Forking
 
-As a little aside, it's worth telling you what "Forking" is. If you remember that cloning is making a local copy of a Git repository that is hosted on a remote server, Forking differs in that instead of making a copy which is still linked to the original remote repository, forking creates a copy which is linked to a new remote version of the repository which is in your name. This means that you can make as many changes to the forked version as you want, and you won't risk changing the original version owned by the person who originally wrote it. This is super useful if you want to experiment with some software, or want to modify somebody elses code for your own uses. 
+As a little aside, it's worth telling you what "Forking" is. If you remember that cloning is making a local copy of a Git repository that is hosted on a remote server, forking differs in that instead of making a copy which is still linked to the original remote repository, forking creates a copy which is linked to a new remote version of the repository which is in your name. This means that you can make as many changes to the forked version as you want, and you won't risk changing the original version owned by the person who originally wrote it. This is super useful if you want to experiment with some software, or want to modify somebody elses code for your own uses. 
 
 Have a go at forking a repository by heading to [https://github.com/papis/papis](https://github.com/papis/papis) and clicking "Fork" in the top right corner. You now have a version of that repository on your own Github account that you can do what you want with. Of course, you are always welcome to submit a pull-request to the original version of the code.
 
@@ -541,7 +545,7 @@ Have a go at forking a repository by heading to [https://github.com/papis/papis]
 
 ### Pull requests
 
-A pull request is like an application sent to the repository owner with a suggestion to merge two branches. If the repository maintainer decides they want to include your changes, they can push the pull request through and merge the two branches. Pull requests can be made from different branches in the same repository or from forked versions of the repository.
+A pull request is like an application sent to the repository owner with a suggestion to merge two branches. If the repository maintainer decides they want to include your changes, they can push the approve the request and merge the two branches. Pull requests can be made from different branches in the same repository or from forked versions of the repository.
 
 You can submit a pull request on Github by going to a respository page on Github, then clicking "Pull requests" and then "New pull request". You will then be asked which branch you want to merge from and which branch you want to merge into. 
 
@@ -559,7 +563,7 @@ At this point you have learnt about pull requests, forking, cloning, branches, c
 
 I've made a repository at [https://github.com/johngodlee/geotaster_challenge](https://github.com/johngodlee/geotaster_challenge). It contains a text document called `story.txt` and a `README.md` file describing what the repository is for.
 
-Fork the Repository to your own Github account, then clone the repository to your local machine. Next we are going to make some changes to the repository.
+Fork the Repository to your own Github account, then clone your forked copy of the repository to your local machine using `git clone`. Next we are going to make some changes to the repository.
 
 Specifically I want us to work as a group to create a silly story, in the same way that people create those cartoon characters by folding over a bit of paper, drawing a bit, then folding it over again and passing it to the next person. 
 
@@ -579,7 +583,9 @@ So then Brian <DID SOMETHING>, but the other fish thought Brian was <A DESCRIPTI
 
 Obviously replacing `<DID SOMETHING>` with an action like `grew a moustache` and `<A DESCRIPTION OF BRIAN>` with a description of Brian, like `self-involved`. 
 
-Then, submit a pull request to merge the master branch of your repository back into the master branch of my version of the repository. Hint, head to _your_ version of the repository on Github to initiate the pull request. Also remember to select "compare across forks" to allow you to make a pull request into my version of the repository.
+Then, submit a pull request to merge the master branch of your repository back into the master branch of my version of the repository. 
+
+Hint, head to _your_ version of the repository on Github to initiate the pull request. Also remember to select "compare across forks" to allow you to make a pull request into my version of the repository.
 
 Hopefully, if we have time, I'll go through and merge the changes live on screen and we can see what ridiculous chain of events we can come up with.
 
@@ -650,7 +656,7 @@ Here are a couple of examples of hosted gitbooks:
 
 ## 10. Learn more advanced Git commands
 
-Here is a map of a more complex Github/Git workflow. This flow chart includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github.
+Below is a map of a more complex Github/Git workflow. This map includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github.
 
 Mac users can install `hub` using Homebrew. In a terminal window enter:
 
@@ -827,12 +833,14 @@ Once you have `hub` installed and properly aliased, you should be able to use th
 
 <a name="section11"></a>
 
-## 11. Configure the `.gitconfig` file
+## 11. Configure the .gitconfig file
 
-You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To make it so Git remembers your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
+You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To force Git to remember your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
 
 ```shell
-touch ~/.gitconfig
+cd ~
+
+touch .gitconfig
 ```
 
 Open the file in a text editor and enter the following information, replacing `<USERNAME>` and `<EMAIL_ADDRESS>` with your own information you used to register with Github:
@@ -843,7 +851,7 @@ Open the file in a text editor and enter the following information, replacing `<
 	email = <EMAIL_ADDRESS>
 ```
 
-You can set other preferences in the `.gitconfig` such as the default text editor you use for commit messages and the pager you use to view Git logs:
+You can set other preferences in the `.gitconfig` such as the default text editor you use for commit messages and the pager you use to view Git logs, by entering the following code into the `.gitconfig`:
 
 ```
 [core]
@@ -858,7 +866,7 @@ On Windows, if you want to use a graphical editor instead of a terminal based ed
 	editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession  noPlugin"
 ```
 
-On macOS you can normally just use the terminal command::
+On macOS and Linux you can normally just use the terminal command for the program:
 
 ```
 [core]
@@ -873,7 +881,7 @@ You can even set aliases for commonly used Git commands in the `.gitconfig`. In 
 	network = log --graph --decorate --pretty=oneline --abbrev-commit --all
 ```
 
-You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a vertain number of minutes (e.g. 3600):
+You can also tell Git to cache your password for a set amount of time, so you don't have to enter that every time you push or pull. If you are using Linux you can store the password in the system cache for a certain number of minutes (e.g. 3600):
 
 ```
 [credential]
@@ -887,7 +895,7 @@ or, if you are using macOS you can grab the password from the macOS keychain too
 	helper = osxkeychain
 ```
 
-or, if you are using Windows:
+or, if you are using Windows you can grab the password from wincred:
 
 ```
 [credential]
@@ -928,7 +936,7 @@ If you are part of a lab group, you may find it useful to set up an organisation
 * __Github__ - A company which provides an online backup system which provides support for Git version control.
 * __Remote__ - A copy of the repository that isn't stored on your local machine. Instead it is often stored on an external server, like Github
 * __GUI__ - A Graphical User Interface, uses buttons and stuff in an attempt to make things easier for the user.
-* __Bash__ - The __B__ourne __A__gain __Sh__ell, a program which you can use to interface with the computer via a terminal
+* __Bash__ - The Bourne Again Shell, a program which you can use to interface with the computer via a terminal
 * __Terminal__ - A text only interface, which allows you to send commands to the computer
 * __SSH__ - A command line program allowing you to connect to other computers over a netwrok connection
 
