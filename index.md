@@ -488,7 +488,17 @@ git commit
 
 If you forget which branch you are on or which branches you have available, you can view them by typing `git branch`.
 
-FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Hopefully, if you have followed the instructions, you will find that there is a conflict!!! Specifically that there is a conflict in `example.sh`. Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
+FINALLY, what happens if we try to merge the `shell_test` branch into the `master` branch? Have a go with this command:
+
+```
+# Checkout the master branch
+git checkout master
+
+# Make the merge
+git merge shell_test
+```
+
+Hopefully, if you have followed the instructions, you will find that there is a conflict!!! Specifically that there is a conflict in `example.sh`. Git doesn't know how to deal with changes we made on the `master` branch since we split off the `shell_test` branch, as they would be overwritten by equivalent changes on the `shell_test` branch. To fix this, you will have to manually choose which copy of the code or mixture of the code to keep.
 
 Open the offending `example.sh` file in a text editor and you should see this:
 
