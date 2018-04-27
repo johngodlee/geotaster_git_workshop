@@ -16,15 +16,19 @@
 
 ### <a href="#section6"> 6. Learn to use multiple branches, merging, pull requests, forks</a>
 
-### <a href="#section7"> 7. Explore the many Git GUIs</a>
+### <a href="#section7"> 7. A challenge!</a>
 
-### <a href="#section8"> 8. Explore extra services built around Github</a>
+### <a href="#section8"> 8. Explore the many Git GUIs</a>
 
-### <a href="#section9"> 9. Learn more advanced Git commands</a>
+### <a href="#section9"> 9. Explore extra services built around Github</a>
 
-### <a href="#section10"> 10. Configure the .gitconfig file</a>
+### <a href="#section10"> 10. Learn more advanced Git commands</a>
 
-### <a href="#section11"> 11. Getting the most out of Github as an academic</a>
+### <a href="#section11"> 11. Configure the .gitconfig file</a>
+
+### <a href="#section12"> 12. Getting the most out of Github as an academic</a>
+
+### <a href="#section13"> 13. Further resources for learning Git</a>
 
 This workshop will teach you about the basics of using the Git version control software. In particular it will focus on how it can be used to enrich your academic research, making collaborating with other researchers more efficient and organised. This workshop isn't a definitive guide to Git, it merely serves as an introduction. If you want to pursue the topic further, follow the resources found at the end of this page.
 
@@ -527,11 +531,65 @@ You might also want to push the changes you just made to the Github remote with 
 
 Branching and merging can get much more complicated than that, with three way merges and the like, but for now this workflow will solve 90% of your branching issues.
 
+### Forking
 
+As a little aside, it's worth telling you what "Forking" is. If you remember that cloning is making a local copy of a Git repository that is hosted on a remote server, Forking differs in that instead of making a copy which is still linked to the original remote repository, forking creates a copy which is linked to a new remote version of the repository which is in your name. This means that you can make as many changes to the forked version as you want, and you won't risk changing the original version owned by the person who originally wrote it. This is super useful if you want to experiment with some software, or want to modify somebody elses code for your own uses. 
+
+Have a go at forking a repository by heading to [https://github.com/papis/papis](https://github.com/papis/papis) and clicking "Fork" in the top right corner. You now have a version of that repository on your own Github account that you can do what you want with. Of course, you are always welcome to submit a pull-request to the original version of the code.
+
+![](img/fork.png)
+
+### Pull requests
+
+A pull request is like an application sent to the repository owner with a suggestion to merge two branches. If the repository maintainer decides they want to include your changes, they can push the pull request through and merge the two branches. Pull requests can be made from different branches in the same repository or from forked versions of the repository.
+
+You can submit a pull request on Github by going to a respository page on Github, then clicking "Pull requests" and then "New pull request". You will then be asked which branch you want to merge from and which branch you want to merge into. 
+
+![](img/pull_req.png)
+
+![](img/pull_req_2.png)
+
+We will explore an example of pull requests in the Challenge section, which is coming up next. 
 
 <a name="section7"></a>
 
-## 7. Explore the many Git GUIs
+## 7. A challenge!
+
+At this point you have learnt about pull requests, forking, cloning, branches, commits, etc. So here is a small group challenge that brings all that knowledge together.
+
+I've made a repository at [https://github.com/johngodlee/geotaster_challenge](https://github.com/johngodlee/geotaster_challenge). It contains a text document called `story.txt` and a `README.md` file describing what the repository is for.
+
+Fork the Repository to your own Github account, then clone the repository to your local machine. Next we are going to make some changes to the repository.
+
+Specifically I want us to work as a group to create a silly story, in the same way that people create those cartoon characters by folding over a bit of paper, drawing a bit, then folding it over again and passing it to the next person. 
+
+You'll see that `story.txt` already contains this line, which starts the story:
+
+```
+Once upon a time there was a fish called Brian. Brian wanted to make new friends so he bought a motorbike, but the other fish thought Brian was trying too hard. 
+```
+
+What I want you to do is modify `story.txt` by adding a line to the document in this sort of form:
+
+```
+Once upon a time there was a fish called Brian. Brian wanted to make new friends so he bought a motorbike, but the other fish thought Brian was trying too hard. 
+
+So then Brian <DID SOMETHING>, but the other fish thought Brian was <A DESCRIPTION OF BRIAN>. 
+```
+
+Obviously replacing `<DID SOMETHING>` with an action like `grew a moustache` and <A DESCRIPTION OF BRIAN>` with a description of Brian, like `self-involved`. 
+
+Then, submit a pull request to merge the master branch of your repository back into the master branch of my version of the repository. Hint, head to _your_ version of the repository on Github to initiate the pull request. Also remember to select "compare across forks" to allow you to make a pull request into my version of the repository.
+
+Hopefully, if we have time, I'll go through and merge the changes live on screen and we can see what ridiculous chain of events we can come up with.
+
+If you want to try a different scenario, pair up with a friend, make a Git repository and store it on Github, then send each other pull requests. 
+
+In the meantime, here are some more Git related things to explore.
+
+<a name="section8"></a>
+
+## 8. Explore the many Git GUIs
 
 Up to now we have done everything in the command line. But there are also many GUI interfaces for Git. Some notable ones include:
 
@@ -547,15 +605,24 @@ __GitKraken__
 
 ![](img/gitkraken.png)
 
+There are also many programs that integrate with Git version control. For example, the "Atom" text editor (unsurprising as it's built by Github), and RStudio, an IDE for writing R code:
+
+__Atom__
+
+![](img/atom_git.png)
+
+__RStudio__
+
+![](img/rstudio_git.png)
+
 All of them follow similar designs, and you could argue they make simple Git operations easier, such as visualising branch relationships. On the other hand, it is impossible to perform some of the more complex Git operations using these GUIs, and I maintain that once you get to learn the Git command line interface you will be much more efficient and quick than if you used a GUI.
 
 For now we will stick with the command line, this is just to let you know that GUI options do exist and you can explore them in your own time if you like.
 
 
+<a name="section9"></a>
 
-<a name="section8"></a>
-
-## 8. Explore extra services built around Github
+## 9. Explore extra services built around Github
 
 The Github ecosystem encompasses more than just the basic remote repository server. Github has additional services and integrations that may be very useful for academic research. We won't go into great detail about these services, this is merely to let you know that they exist. Many more services can be found on the [Github marketplace](https://github.com/marketplace), though a good number of them require expensive subscriptions. Below are two integrations which are free an useful for academics.
 
@@ -579,9 +646,9 @@ Here are a couple of examples of hosted gitbooks:
 
 
 
-<a name="section9"></a>
+<a name="section10"></a>
 
-## 9. Learn more advanced Git commands
+## 10. Learn more advanced Git commands
 
 Here is a map of a more complex Github/Git workflow. This flow chart includes some commands that are prefaced by `{hub}`. `hub` is an add-on for Git which increases Git's functionality when interacting with Github.
 
@@ -758,9 +825,9 @@ Once you have `hub` installed and properly aliased, you should be able to use th
   </tr>
 </table>
 
-<a name="section10"></a>
+<a name="section11"></a>
 
-## 10. Configure the `.gitconfig` file
+## 11. Configure the `.gitconfig` file
 
 You may have found that everytime you want to pull or push from the remote Github server, that you have to enter your username and password, which is incredibly tedious. To make it so Git remembers your login information, and to set lots of other preferences, you can edit a file called `.gitconfig`, which is normally located in the `~` directory. If you don't have one, create it with:
 
@@ -827,9 +894,9 @@ or, if you are using Windows:
 	helper = wincred
 ```
 
-<a name="section11"></a>
+<a name="section12"></a>
 
-## 11. Getting the most out of Github as an academic
+## 12. Getting the most out of Github as an academic
 
 With Github, it is possible to get access to free private repositories if you are an academic. By default, repositories hosted on Github are public, which means that anybody else can view the contents of the files in that repository. This might not be a desirable thing for some academic projects where the risk of getting scooped is unfortunately real. But if you head to [the Github Education page](https://education.github.com/discount_requests/new) you can request a discount as either a student or a researcher and receive free unlimited private repositories, along with some other goodies like software subscriptions and access to a free personal domain name for your website.
 
@@ -837,7 +904,9 @@ If you are part of a lab group, you may find it useful to set up an organisation
 
 ![](img/org_acc.png)
 
-## 11. Further resources for learning Git
+<a name="section12"></a>
+
+## 13. Further resources for learning Git
 
 [The Pro Git book](https://git-scm.com/book/en/v2)
 
@@ -862,4 +931,5 @@ If you are part of a lab group, you may find it useful to set up an organisation
 * __Bash__ - The __B__ourne __A__gain __Sh__ell, a program which you can use to interface with the computer via a terminal
 * __Terminal__ - A text only interface, which allows you to send commands to the computer
 * __SSH__ - A command line program allowing you to connect to other computers over a netwrok connection
+
 
