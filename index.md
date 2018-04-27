@@ -577,7 +577,7 @@ Once upon a time there was a fish called Brian. Brian wanted to make new friends
 So then Brian <DID SOMETHING>, but the other fish thought Brian was <A DESCRIPTION OF BRIAN>. 
 ```
 
-Obviously replacing `<DID SOMETHING>` with an action like `grew a moustache` and <A DESCRIPTION OF BRIAN>` with a description of Brian, like `self-involved`. 
+Obviously replacing `<DID SOMETHING>` with an action like `grew a moustache` and `<A DESCRIPTION OF BRIAN>` with a description of Brian, like `self-involved`. 
 
 Then, submit a pull request to merge the master branch of your repository back into the master branch of my version of the repository. Hint, head to _your_ version of the repository on Github to initiate the pull request. Also remember to select "compare across forks" to allow you to make a pull request into my version of the repository.
 
