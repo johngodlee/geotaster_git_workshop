@@ -413,7 +413,7 @@ This will create a new branch called `shell_test` and switch you to that branch.
 Now, the first thing you should do with your new branch is sync it to the remote Github version of the repo. To do this, type:
 
 ```shell
-git push --set-upstream remote origin shell_test
+git push -u origin shell_test
 ```
 
 This will create a new remote branch that the local `shell_test` branch will sync with when you run `git push`.
